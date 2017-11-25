@@ -1,0 +1,21 @@
+
+body {
+   display: grid;
+    grid-template-rows: [row1-start] 20% [row2-start] 60% [row3-start] 20% [row3-end];
+    grid-template-columns: auto; 
+    grid-gap: 10px;
+    background-color: #EEEEEE;
+}
+
+header {
+    grid-row: row1-start / row2-start;
+    background-color: #288080;
+}
+
+main {
+    grid-row: row2-start / row3-start;
+}
+
+footer {
+    grid-row: row3-start;
+}

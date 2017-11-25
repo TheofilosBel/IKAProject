@@ -7,17 +7,25 @@ div.container {
     grid-gap: 10px 10px;
 }
 
+a {
+    text-decoration: none;  /* Remove the hyperlink underline */
+    display: block;
+}
+
 .box {
     background-color: #339999;
     color: white;
     border: solid 2px black;
+    border-radius: 25px;
+    padding: 20px 0;
+    text-align: center;
 }
 
 div.main-opts {
     grid-column: col1-start / col2-start;
     display: grid;
-    grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col2-end]; 
     grid-template-rows: [row1-start] 1fr [row2-start] 1fr [row2-end];
+    grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col2-end]; 
     grid-gap: 10px 10px;
 }
 

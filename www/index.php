@@ -18,16 +18,17 @@
             <div class="container">
 
                 <div class="main-opts">
-                    <div class="box a">A</div>
-                    <div class="box b">B</div>
-                    <div class="box c">C</div>
-                    <div class="box d">D</div>
+                    
+                    <a href='a.php' class="box a">A</a>
+                    <a href="#" class="box b">B</a>
+                    <a href="#" class="box c">C</a>
+                    <a href="#" class="box d">D</a>
                 </div>  <!--div child 1-->
 
                 <div class="secondary-opts">
-                    <div class="box e">D</div>
-                    <div class="box f">E</div>
-                    <div class="box g">F</div>
+                    <a href="#" class="box e">D</a>
+                    <a href="#" class="box f">E</a>
+                    <a href="#" class="box g">F</a>
                 </div>  <!--div child 2-->
 
 

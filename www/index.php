@@ -3,7 +3,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="CSS/general_layout.css">
         <link rel="stylesheet" type="text/css" href="CSS/index.css">
-        <title>IKA-Αρχική Σελίδα</title>
+        <meta charset="utf8">
+        <title>IKA - Αρχική Σελίδα</title>
     </head>
 
 

@@ -10,9 +10,7 @@
 
     <body>
 
-        <header>
-            <p> THIS IS THE HEADER </p>
-        </header>  <!-- header -->
+        <?php include 'Includes/header.php'; ?>  
 
         <main>
             

@@ -14,6 +14,28 @@ header {
     height: 80px;
 }
 
+.nav_menu {
+    list-style-type: none;
+    height: 100%;
+    float: right;
+}
+
+.nav_menu li {
+    float: left;
+    height: 100%;
+    padding-right: 10px;
+}
+
+.nav_menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+.nav_menu li a:hover {
+    background-color: #111;
+}
+
 main {
     grid-row: row2-start / row3-start;
 }

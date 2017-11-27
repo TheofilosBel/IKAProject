@@ -25,7 +25,6 @@
                     <a href="#" class="box epik"><img src="images/contact.png" height="70" width="70"><h2>Επικοινωνία</h2></a>
                 </div>  <!--div child 2-->
 
-
             </div>  <!-- div -->
         </main>  <!-- main -->
 

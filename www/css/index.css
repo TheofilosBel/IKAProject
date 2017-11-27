@@ -13,6 +13,11 @@ a {
     display: block;
 }
 
+img {
+    vertical-align: middle;
+    margin-right:5px;
+}
+
 .box {
     background-color: rgba(0, 120, 160, 0.5);
     color: white;

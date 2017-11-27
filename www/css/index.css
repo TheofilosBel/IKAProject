@@ -5,7 +5,7 @@ div.container {
     grid-template-columns: [col1-start] auto [col2-start] auto [col3-start] auto [col3-end];
     grid-template-rows: auto;
     grid-gap: 10px 10px;
-    height: 450px;
+    height: auto;
 }
 
 a {
@@ -26,6 +26,11 @@ img {
     padding: 20px 0;
     text-align: center;
 }
+
+.box:hover {
+    background-color: rgba(0, 120, 180, 1);
+}
+
 
 div.main-opts {
     grid-column: col1-start / col3-start;

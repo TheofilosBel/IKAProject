@@ -1,16 +1,17 @@
-
 body {
     display: grid;
     grid-template-rows: [row1-start] 20% [row2-start] 60% [row3-start] 20% [row3-end];
-    grid-template-columns: auto; 
+    grid-template-columns: auto;
     grid-gap: 10px;
     margin: 0 auto;
-    background-color: #EEEEEE;
+    background-color: rgb(238, 238, 238);
 }
 
 header {
     grid-row: row1-start / row2-start;
-    background-color: #288080;
+    /*background-color: #288080;*/
+    background-color: rgb(0, 120, 160);
+    height: 80px;
 }
 
 main {

@@ -1,10 +1,12 @@
 div.container {
     display: grid;
-    max-width: 70%;
+    max-width: 85%;
     margin: auto;
-    grid-template-columns: [col1-start] 50% [col2-start] 50% [col2-end]; 
+    /*grid-template-columns: [col1-start] 50% [col2-start] 50% [col2-end];*/
+    grid-template-columns: [col1-start] auto [col2-start] auto [col3-start] auto [col3-end];
     grid-template-rows: auto;
     grid-gap: 10px 10px;
+    height: 450px;
 }
 
 a {
@@ -13,18 +15,20 @@ a {
 }
 
 .box {
-    background-color: #339999;
+    background-color: rgba(0, 120, 160, 0.5);
     color: white;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 20px 0;
     text-align: center;
 }
 
 div.main-opts {
-    grid-column: col1-start / col2-start;
+    /*grid-column: col1-start / col2-start;*/
+    grid-column: col1-start / col3-start;
     display: grid;
     grid-template-rows: [row1-start] 1fr [row2-start] 1fr [row2-end];
-    grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col2-end]; 
+    /*grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col2-end];*/
+    grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col3-start]; 
     grid-gap: 10px 10px;
 }
 
@@ -34,7 +38,7 @@ div.main-opts {
 }
 
 .b {
-    grid-column: col2-start;
+    grid-column: col2-start / col3-start;
     grid-row: row1-start / row2-start;
 }
 
@@ -44,12 +48,12 @@ div.main-opts {
 }
 
 .d {
-    grid-column: col2-start;
+    grid-column: col2-start / col3-start;
     grid-row: row2-start;
 }
 
 div.secondary-opts {
-    grid-column: col2-start;
+    grid-column: col3-start;
     display: grid;
     grid-template-rows: [row1-start] 1fr [row2-start] 1fr [row3-start] 1fr [row3-end];
     grid-template-columns: auto;

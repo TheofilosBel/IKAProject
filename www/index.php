@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="CSS/general_layout.css">
         <link rel="stylesheet" type="text/css" href="CSS/index.css">
         <meta charset="utf8">
-        <title>IKA - Αρχική Σελίδα</title>
+        <title>ΙΚΑ - Αρχική Σελίδα</title>
     </head>
 
 
@@ -25,9 +25,9 @@
                 </div>  <!--div child 1-->
 
                 <div class="secondary-opts">
-                    <a href="#" class="box e">D</a>
-                    <a href="#" class="box f">E</a>
-                    <a href="#" class="box g">F</a>
+                    <a href="#" class="box e">E</a>
+                    <a href="#" class="box f">F</a>
+                    <a href="#" class="box g">G</a>
                 </div>  <!--div child 2-->
 
 

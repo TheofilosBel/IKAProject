@@ -37,7 +37,7 @@
         </main>  <!-- main -->
 
         <footer>
-            <p> THIS IS THE FOOTER </p>
+            <p> Copyright © 2017-2018 ΙΚΑ-ΕΤΑΜ</p>
         </footer>  <!-- footer -->
 
     </body> <!-- body -->

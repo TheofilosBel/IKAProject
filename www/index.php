@@ -7,27 +7,22 @@
         <title>ΙΚΑ - Αρχική Σελίδα</title>
     </head>
 
-
     <body>
-
         <?php include 'Includes/header.php'; ?>  
 
         <main>
-            
             <div class="container">
-
                 <div class="main-opts">
-                    
-                    <a href='a.php' class="box a">A</a>
-                    <a href="#" class="box b">B</a>
-                    <a href="#" class="box c">C</a>
-                    <a href="#" class="box d">D</a>
+                    <a href='a.php' class="box asfal">Ασφαλισμένοι</a>
+                    <a href="#" class="box synta">Συνταξιούχοι</a>
+                    <a href="#" class="box ergo">Εργοδότες</a>
+                    <a href="#" class="box foreis">Φορείς</a>
                 </div>  <!--div child 1-->
 
                 <div class="secondary-opts">
-                    <a href="#" class="box e">E</a>
-                    <a href="#" class="box f">F</a>
-                    <a href="#" class="box g">G</a>
+                    <a href="#" class="box faqs">Συχνές Ερωτήσεις - <br> FAQs</a>
+                    <a href="#" class="box forum">Φόρουμ</a>
+                    <a href="#" class="box epik">Επικοινωνία</a>
                 </div>  <!--div child 2-->
 
 
@@ -35,7 +30,7 @@
         </main>  <!-- main -->
 
         <footer>
-            <p> Copyright © 2017-2018 ΙΚΑ-ΕΤΑΜ</p>
+            <p>Copyright © 2017-2018 ΙΚΑ-ΕΤΑΜ-DIT</p>
         </footer>  <!-- footer -->
 
     </body> <!-- body -->

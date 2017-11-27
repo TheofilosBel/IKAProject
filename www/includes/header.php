@@ -1,6 +1,6 @@
 <header>
-    
     <!-- LOGO -->
+    <img src="images/logo.png" height="50" width="50">
 
     <ul class="nav_menu">
         <li><a href="#"><img src="images/home.png" height="20" width="20"><h4>Αρχική</h4></a></li>

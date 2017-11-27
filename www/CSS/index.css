@@ -15,7 +15,6 @@ a {
 .box {
     background-color: #339999;
     color: white;
-    border: solid 2px black;
     border-radius: 25px;
     padding: 20px 0;
     text-align: center;

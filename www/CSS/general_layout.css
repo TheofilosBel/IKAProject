@@ -4,6 +4,7 @@ body {
     grid-template-rows: [row1-start] 20% [row2-start] 60% [row3-start] 20% [row3-end];
     grid-template-columns: auto; 
     grid-gap: 10px;
+    margin: 0 auto;
     background-color: #EEEEEE;
 }
 

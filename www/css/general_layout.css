@@ -11,11 +11,10 @@ body {
 header {
     grid-row: row1-start / row2-start;
     display: grid;
-    grid-template-columns: [col1-start] 1fr [col2-start] 3fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
     background-color: rgb(0, 120, 160);
     overflow: hidden;
-    position: relative;
 }
 
 ul.nav_menu {
@@ -24,7 +23,6 @@ ul.nav_menu {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    height: 100%;
 }
 
 .nav_menu li {
@@ -46,7 +44,6 @@ ul.nav_menu {
 .nav_menu li a:hover {
     background-color: rgb(1, 69, 131);
 }
-
 
 .nav_menu li img {
     vertical-align: middle;

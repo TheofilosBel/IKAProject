@@ -28,6 +28,7 @@ ul.nav_menu {
 
 .nav_menu li {
     float: left;
+    height: 100%;
 }
 
 .nav_menu li a.non_ddown {
@@ -44,6 +45,7 @@ ul.nav_menu {
 
 .nav_menu li a.non_ddown:hover {
     background-color: rgb(1, 69, 131);
+    height: 100%;
 }
 
 .nav_menu li img {

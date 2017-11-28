@@ -10,27 +10,25 @@ body {
 
 header {
     grid-row: row1-start / row2-start;
+    display: grid;
+    grid-template-columns: [col1-start] 1fr [col2-start] 3fr;
+    grid-template-rows: auto;
     background-color: rgb(0, 120, 160);
     overflow: hidden;
     position: relative;
-    width: 100%;
 }
 
-.nav_menu {
+ul.nav_menu {
+    justify-self: end;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     height: 100%;
-    width: 50%;
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 .nav_menu li {
     float: left;
-    height: 100%;
 }
 
 .nav_menu li a {
@@ -39,7 +37,6 @@ header {
     padding: 25px 16px;
     text-align: center;
     text-decoration: none;
-    height: 100%;
 }
 
 .nav_menu li p {
@@ -49,6 +46,15 @@ header {
 .nav_menu li a:hover {
     background-color: rgb(1, 69, 131);
 }
+
+
+.nav_menu li img {
+    vertical-align: middle;
+    margin-right:5px;
+}
+
+
+
 
 main {
     grid-row: row2-start / row3-start;

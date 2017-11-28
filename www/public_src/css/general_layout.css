@@ -58,6 +58,9 @@ ul.nav_menu {
 */
 
 /* the dorop down button-link */
+.dropdown {
+}
+
 div.ddown {
     display: block;
     color: white;

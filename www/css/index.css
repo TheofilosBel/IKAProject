@@ -31,7 +31,6 @@ img {
     background-color: rgba(0, 120, 180, 1);
 }
 
-
 div.main-opts {
     grid-column: col1-start / col3-start;
     display: grid;

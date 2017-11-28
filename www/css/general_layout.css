@@ -47,14 +47,10 @@ ul.nav_menu {
     background-color: rgb(1, 69, 131);
 }
 
-
 .nav_menu li img {
     vertical-align: middle;
     margin-right:5px;
 }
-
-
-
 
 main {
     grid-row: row2-start / row3-start;

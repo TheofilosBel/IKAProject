@@ -9,18 +9,26 @@
     <body>
 
     <!-- Include the header -->
-	<?php include './includes/header.php' ?>
+	<?php include '../resources/templates/header.php' ?>
 
 	<main>
+	<div class="container">
+
 		<h3> Σύνδεση στο ΙΚΑ </h3>
+
+		<div class="form box">
+			
+		</div>
+
+		
 		
 
-
+	</div>
 	</main>  <!-- main -->
 
 
 	<!-- Include the footer -->
-	<?php include 'includes/footer.php' ?>
+	<?php include '../resources/templates/footer.php' ?>
 
 	</body>
 

@@ -28,25 +28,20 @@ ul.nav_menu {
 .nav_menu li {
     float: left;
     height: 100%;
-    position: relative;
-    
 }
 
-.nav_menu li a {
+.nav_menu li a.non-ddown {
     display: block;
     color: white;
     padding: 25px 16px;
     text-align: center;
     text-decoration: none;
-}
-
-.nav_menu li p {
-    display: inline;
-}
-
-.nav_menu li a:hover {
-    background-color: rgb(1, 69, 131);
     height: 100%;
+    box-sizing: border-box;
+}
+
+.nav_menu li a.non-ddown:hover {
+    background-color: rgb(1, 69, 131);
 }
 
 .nav_menu li img {
@@ -60,24 +55,53 @@ ul.nav_menu {
    +----------------+
 */
 
-ul li ul.dropdown{
-    min-width: 100%; /* Set width of the dropdown */
-    background: #f2f2f2;
+.dropdown {
+    height: 100%;
+}
+
+/* the dorop down button-link */
+div.ddown {
+    display: block;
+    color: white;
+    padding: 25px 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+div.dropdown-content {
     display: none;
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 999;
-    left: 0;
+    min-width: 160px;
+    background-color: rgb(0, 120, 160);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 2;
 }
-ul li:hover ul.dropdown{
-    display: block; /* Display the dropdown */
+
+/* Links inside the dropdown */
+.dropdown a {
+    display: block;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
 }
-ul li ul.dropdown li{
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
+.dropdown a:hover {
+    background-color: rgb(1, 100, 131);
+}
 
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .ddown {
+    background-color: rgb(1, 69, 131);
+}
 
 /*------------------*/
 

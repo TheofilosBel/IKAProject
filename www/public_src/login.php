@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
         <meta charset="utf8">
         <title>ΙΚΑ - Είσοδος Χρήστη</title>
     </head>
@@ -13,8 +14,22 @@
 
     <main>
         <div class="container">
-            <h3> Σύνδεση στο ΙΚΑ </h3>
-            <div class="form box"></div>
+            <h1>Σύνδεση στο ΙΚΑ</h1>
+            <div class="login_box">
+                <form action="#">
+                    <label for="name">Ψευδώνυμο Χρήστη</label>
+                    <input type="text" id="name" name="username" autofocus>
+
+                    <label for="pass">Συνθηματικό</label>
+                    <input type="text" id="pass" name="password">
+                    <a href="#">Ξεχάσατε το συνθηματικό σας;</a>
+
+                    <input type="submit" value="Είσοδος">
+                </form> 
+            </div>
+            <div class="signup_box">
+                <p>Είστε νέος χρήστης; <a href="#">Εγγραφείτε</a>.</p>
+            </div>
         </div>
     </main>  <!-- main -->
 

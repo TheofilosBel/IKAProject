@@ -8,12 +8,13 @@
     </head>
 
     <body>
+        <!-- Include the header -->
         <?php include 'includes/header.php'; ?>  
 
         <main>
             <div class="container">
                 <div class="main-opts">
-                    <a href='a.php' class="box asfal"><img src="images/asf.png" height="70" width="70"><h2>Ασφαλισμένοι </h2></a>
+                    <a href='a.php' class="box asfal"><img src="images/asf.png" height="70" width="70"><h2>Ασφαλισμένοι</h2></a>
                     <a href="#" class="box synta"><img src="images/synt.png" height="70" width="70"><h2>Συνταξιούχοι</h2></a>
                     <a href="#" class="box ergo"><img src="images/erg.png" height="70" width="70"><h2>Εργοδότες</h2></a>
                     <a href="#" class="box foreis"><img src="images/foreis.png" height="70" width="70"><h2>Φορείς</h2></a>
@@ -28,10 +29,8 @@
             </div>  <!-- div -->
         </main>  <!-- main -->
 
-        <footer>
-            <hr>
-            <p>Copyright © 2017-2018 ΙΚΑ-ΕΤΑΜ-DIT</p>
-        </footer>  <!-- footer -->
+        <!-- Include the footer -->
+        <?php include 'includes/footer.php'; ?> 
 
     </body> <!-- body -->
 </html>  

@@ -9,5 +9,4 @@
         <li><a href="#"><img src="images/globe.png" height="20" width="20"><p>Γλώσσα</p></a></li>
         <li><a href="#"><img src="images/login.png" height="20" width="20"><p>Είσοδος</p></a></li>
     </ul>
-
 </header>

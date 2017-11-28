@@ -50,9 +50,6 @@ ul.nav_menu {
     margin-right:5px;
 }
 
-
-
-
 main {
     grid-row: row2-start / row3-start;
 }

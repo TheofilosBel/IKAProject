@@ -67,6 +67,7 @@ input[type=submit]:hover {
     text-align: center;
     padding: 20px 0px 5px;
     font-style: italic;
+    color: rgb(126, 129, 126);
 }
 
 .signup-box {

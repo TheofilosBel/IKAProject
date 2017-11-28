@@ -15,7 +15,7 @@
     <main>
         <div class="container">
             <h1>Σύνδεση στο ΙΚΑ</h1>
-            <div class="login_box">
+            <div class="login-box">
                 <form action="#">
                     <label for="name">Ψευδώνυμο Χρήστη</label>
                     <input type="text" id="name" name="username" autofocus>
@@ -27,7 +27,7 @@
                     <input type="submit" value="Είσοδος">
                 </form> 
             </div>
-            <div class="signup_box">
+            <div class="signup-box">
                 <p>Είστε νέος χρήστης; <a href="#">Εγγραφείτε</a>.</p>
             </div>
         </div>

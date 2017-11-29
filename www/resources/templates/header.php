@@ -4,18 +4,22 @@
 
     <ul class="nav_menu">
         <li><a class="non-ddown" href="./"><img src="img/home.png" height="20" width="20">Αρχική</a></li>
-        <li><a class="non-ddown" href="#"><img src="img/search.png" height="20" width="20">Αναζήτηση</a></li>
+        <li><div class="dropdown">
+                <div class="ddown" href="#"><img src="img/search.png" height="20" width="20">Αναζήτηση</div>
+
+                <div class="search-bar">
+                     <input type="text" name="search" placeholder="Search.."> 
+                </div>
+        </div></li>
         <li><a class="non-ddown" href="#"><img src="img/menu.png" height="20" width="20">Μενού</a></li>
         <li><div class="dropdown">
                 <div class="ddown" href="#"><img src="img/globe.png" height="20" width="20">Γλώσσα &#9660;</div>
 
                 <div class="dropdown-content">
-                    <a href="#">Ελληνηκά <img src="img/greek.png" height="15" widht="15"></a>
-                    <a href="#">Αγγλικά  <img src="img/english.png" height="15" widht="15"></a>
+                    <a href="#"><span>Ελληνηκά</span> <img src="img/greek.png" height="20" widht="20"></a>
+                    <a href="#"><span>Αγγλικά</span>  <img src="img/english.png" height="15" widht="15"></a>
                 </div>
-            </div>
-        </li>
-
+        </div></li>
         <li><a class="non-ddown" href="./login.php"><img src="img/login.png" height="20" width="20">Είσοδος/Εγγραφή</a></li>
     </ul>
 </header>

@@ -83,16 +83,26 @@ div.dropdown-content {
 
 /* Links inside the dropdown */
 .dropdown a {
-    display: block;
+    display: table-row;
     color: white;
-    padding: 5px 5px;
-    text-align: center;
     text-decoration: none;
 }
 
+/* Table like align */
+.dropdown a span {
+    display: table-cell;
+    padding: 5px 10px;
+}
+
+.dropdown a img {
+    display: table-cell;
+    padding: 5px 0px;
+}
+
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: table;
 }
 
 .dropdown a:hover {

@@ -4,7 +4,15 @@
 
     <ul class="nav_menu">
         <li><a class="non-ddown" href="./"><img src="img/home.png" height="20" width="20">Αρχική</a></li>
-        <li><a class="non-ddown" href="#"><img src="img/search.png" height="20" width="20">Αναζήτηση</a></li>
+        <li>
+            <div class="dropdown">
+                <div class="ddown" href="#"><img src="img/search.png" height="20" width="20">Αναζήτηση</div>
+
+                <div class="search-bar">
+                     <input type="text" name="search" placeholder="Search.."> 
+                </div>
+            </div>
+        </li>
         <li><a class="non-ddown" href="#"><img src="img/menu.png" height="20" width="20">Μενού</a></li>
         <li><div class="dropdown">
                 <div class="ddown" href="#"><img src="img/globe.png" height="20" width="20">Γλώσσα &#9660;</div>

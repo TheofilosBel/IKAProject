@@ -50,9 +50,10 @@ ul.nav_menu {
 }
 
 
-/* +----------------+
-   | Drop down list |
-   +----------------+
+/*
+ * +----------------+
+ * | Drop down list |
+ * +----------------+
 */
 
 .dropdown {
@@ -102,8 +103,34 @@ div.dropdown-content {
 .dropdown:hover .ddown {
     background-color: rgb(1, 69, 131);
 }
-
 /*------------------*/
+
+
+/*
+ * +------------+
+ * | Search bar |
+ * +------------+
+*/
+
+.search-bar {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.dropdown:hover .search-bar {
+    display: block;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+/*----------------*/
+
 
 main {
     grid-row: row2-start / row3-start;

@@ -52,17 +52,3 @@ a:link {
     font-size: 12px;
     transition: max-height 0.2s ease-out;
 }
-
-.button {
-    background-color: rgba(0, 120, 180, 1);
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 2px 10px 2px;
-    cursor: pointer;
-}

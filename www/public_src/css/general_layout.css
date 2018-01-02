@@ -49,7 +49,6 @@ ul.nav_menu {
     margin-right:5px;
 }
 
-
 /*
  * +----------------+
  * | Drop down list |
@@ -99,7 +98,6 @@ div.dropdown-content {
     padding: 5px 0px;
 }
 
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: table;
@@ -139,9 +137,20 @@ input[type=text]:focus {
     width: 100%;
 }
 
-/*----------------*/
+/* Remove the dotted outline */
+button::-moz-focus-inner {
+  border: 0;
+}
 
+button:focus {
+    outline: none;
+}
 
+a:focus { 
+    outline: none; 
+}
+
+/* General */
 main {
     grid-row: row2-start / row3-start;
 }

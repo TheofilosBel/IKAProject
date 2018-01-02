@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="main-opts">
                     <a href='insured.php' class="box asfal"><img src="img/asf.png" height="70" width="70"><h3>Ασφαλισμένοι</h3></a>
-                    <a href="#" class="box synta"><img src="img/synt.png" height="70" width="70"><h3>Συνταξιούχοι</h3></a>
+                    <a href="pensioners.php" class="box synta"><img src="img/synt.png" height="70" width="70"><h3>Συνταξιούχοι</h3></a>
                     <a href="#" class="box ergo"><img src="img/erg.png" height="70" width="70"><h3>Εργοδότες</h3></a>
                     <a href="#" class="box foreis"><img src="img/foreis.png" height="70" width="70"><h3>Φορείς</h3></a>
                 </div>  <!--div child 1-->

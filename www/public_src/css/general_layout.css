@@ -155,6 +155,12 @@ main {
     grid-row: row2-start / row3-start;
 }
 
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0px 0px 0px 20px;
+}
+
 footer {
     grid-row: row3-start;
     justify-self: center;

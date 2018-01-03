@@ -14,7 +14,6 @@
         define('__ROOT__', "../");
         require_once(__ROOT__."/resources/config.php");
         require_once(TEMPLATES_PATH."/header.php");
-        require_once(TEMPLATES_PATH."/mysqlConnector.php");
         ?>
 
         <main>

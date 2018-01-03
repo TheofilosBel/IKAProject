@@ -28,10 +28,17 @@ a {
 }
 
 /* Style of the form fields */
+input.has-error {
+  border: 3px solid red;
+}
+
+.text-margin {
+  margin: 8px 0px 20px;
+}
+
 input[type=text] {
-    width: 95%;
     padding: 12px 20px;
-    margin: 8px 0px 20px;
+    width: 95%;
     display: inline-block;
     border: 1px solid rgb(216, 222, 226);
     border-radius: 5px;
@@ -61,6 +68,11 @@ input[type=submit] {
 /* Change color of the login button on hover */
 input[type=submit]:hover {
     background-color: rgb(69, 160, 73);
+}
+
+span {
+  font-size: 11px;
+  color: red;
 }
 
 .keep-login {

@@ -13,6 +13,4 @@ if ($db_connection->connect_error) {
     die("Connection failed: $db_connection->connect_error");
 }
 
-/* Close Connection */
-$db_connection->close()
 ?>

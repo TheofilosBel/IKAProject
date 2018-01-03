@@ -10,7 +10,11 @@
     <body>
 
     <!-- Include the header -->
-    <?php include '../resources/templates/header.php' ?>
+    <?php
+    define('__ROOT__', "../");
+    require_once(__ROOT__."/resources/config.php");
+    require_once(TEMPLATES_PATH . "/header.php");
+    ?>
 
     <main>
         <div class="container">
@@ -26,11 +30,11 @@
 
                     <div class="keep-login">
                         <input type="checkbox" id="keep-login" name="keep-login"/>
-                        <label for="keep-login">Αυτόματη σύνδεση</label> 
+                        <label for="keep-login">Αυτόματη σύνδεση</label>
                     </div>
 
                     <input type="submit" value="Είσοδος">
-                </form> 
+                </form>
             </div>
 
             <div class="signup-box">
@@ -40,6 +44,6 @@
     </main>  <!-- main -->
 
     <!-- Include the footer -->
-    <?php include '../resources/templates/footer.php' ?>
+    <?php require_once(TEMPLATES_PATH . "/footer.php"); ?>
     </body>
 </html>

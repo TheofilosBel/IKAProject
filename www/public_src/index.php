@@ -8,8 +8,14 @@
     </head>
 
     <body>
+
         <!-- Include the header -->
-        <?php include '../resources/templates/header.php'; ?>
+        <?php
+        define('__ROOT__', "../");
+        require_once(__ROOT__."/resources/config.php");
+        require_once(TEMPLATES_PATH."/header.php");
+        require_once(TEMPLATES_PATH."/mysqlConnector.php");
+        ?>
 
         <main>
             <div class="container">
@@ -30,6 +36,6 @@
         </main>  <!-- main -->
 
         <!-- Include the footer -->
-        <?php include '../resources/templates/footer.php'; ?> 
+        <?php require_once(TEMPLATES_PATH."/footer.php"); ?>
     </body> <!-- body -->
-</html>  
+</html>

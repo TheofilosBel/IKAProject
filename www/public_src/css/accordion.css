@@ -26,7 +26,7 @@ a:link {
 }
 
 .accordion:after {
-    content: '\002B';
+    content: '\002B'; /* The "+" sign next to the accodination if it's not active */
     color: white;
     font-weight: bold;
     float: right;
@@ -34,7 +34,7 @@ a:link {
 }
 
 .active:after {
-    content: "\2212";
+    content: "\2212";  /* The "-" sign next to the accodination if it's active */
 }
 
 .panel {

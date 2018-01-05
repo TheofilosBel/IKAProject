@@ -5,7 +5,6 @@ define('__ROOT__', "../");
 require_once(__ROOT__."/resources/config.php");
 
 /* Define variables and initialize with empty values */
-$message = '';
 $username = $password = "";
 $username_err = $password_err = "";
 
@@ -50,7 +49,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = 'Non existing user.';
       } else {
         if ($db_pass == $password) {
-
+          /*User authenticated , set a cookie for session managment */
+          $cookie_name = "username";
+          $cookie_val  = $username;
+          setcookie($cookie_name, $cookie_val, time() + (86400 * 3));
+          /* Redirect to home page */
           header("Location: index.php");
           die();
         } else {
@@ -64,10 +67,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     }
     catch(Exception $e){
-      echo "We cant hanndle your request because of the following error :".$e->getMessage();;
+      echo "We cant hanndle your request because of the following error :".$e->getMessage();
+      die();
     }
   }
-  echo $message;
 }
 ?>
 

@@ -1,3 +1,8 @@
+<?php
+define('__ROOT__', "../");
+require_once(__ROOT__."/resources/config.php");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,13 +15,8 @@
     <body>
 
         <!-- Include the header -->
-        <?php
-        define('__ROOT__', "../");
-        require_once(__ROOT__."/resources/config.php");
-        require_once(TEMPLATES_PATH."/header.php");
-        require_once(TEMPLATES_PATH."/mysqlConnector.php");
-        ?>
-
+        <?php require_once(TEMPLATES_PATH."/header.php");?>
+        
         <main>
             <div class="container">
                 <div class="main-opts">

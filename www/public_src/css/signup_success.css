@@ -1,0 +1,21 @@
+h1 {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    color: green;
+    margin: 20px 0px 30px;
+}
+
+.button {
+    background-color: rgba(0, 120, 180, 1);
+    border: none;
+    color: white;
+    padding: 22px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 36px 12px;
+    cursor: pointer;
+}

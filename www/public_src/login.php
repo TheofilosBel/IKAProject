@@ -9,68 +9,70 @@ $username = $password = "";
 $username_err = $password_err = "";
 
 /* Processing form data when form is submitted */
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    /* Check if password and username are filled */
+    if (empty($_POST["username"])) {
+        $username_err = "Εισάγετε το ψευδώνυμο χρήστη σας.";
+    }
+    else {
+        $username = $_POST["username"];
+    }
 
-  /* Check if password and username are filed */
-  if(empty(trim($_POST["username"]))){
-      $username_err = 'Please enter username.';
-  } else{
-      $username = trim($_POST["username"]);
-  }
+    /* Check if password is empty */
+    if (empty($_POST['password'])) {
+        $password_err = "Εισάγετε το συνθηματικό σας.";
+    }
+    else {
+        $password = $_POST['password'];
+    }
 
-  /* Check if password is empty */
-  if(empty(trim($_POST['password']))){
-      $password_err = 'Please enter your password.';
-  } else{
-      $password = trim($_POST['password']);
-  }
+    if (empty($username_err) && empty($password_err)) {
+        /* Get the username and password */
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-  if(empty($username_err) && empty($password_err)){
+        try {
+            /* Get the connection */
+            require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
 
-    /* Get the username and password */
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+            /* Query the db for the user_cred */
+            $query = 'SELECT password FROM user_cred WHERE username=\''.$username.'\';';
+            $result = $db_connection->query($query);
+            if (!$result) die($db_connection->error);
 
-    try {
-      /* Get the connection */
-      require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
+            /* Get the user credentials */
+            $result->data_seek(0);
+            $result_row = $result->fetch_assoc();
+            $db_pass = $result_row['password'];
 
-      /* Query the db for the user_cred*/
-      $query = 'SELECT password FROM user_cred WHERE username=\''.$username.'\';';
-      $result = $db_connection->query($query);
-      if (!$result) die($db_connection->error);
+            /* Does the user exists, if yes do the passwords match */
+            if ($result->num_rows != 1) {
+                $username_err = "Το ψευδώνυμο χρήστη δεν υπάρχει.";
+            }
+            else {
+                if ($db_pass == $password) {
+                    /*User authenticated , set a cookie for session managment */
+                    $cookie_name = "username";
+                    $cookie_val  = $username;
+                    setcookie($cookie_name, $cookie_val, time() + (86400 * 3));
+                    /* Redirect to home page */
+                    header("Location: index.php");
+                    die();
+                }
+                else {
+                    /* Display error message */
+                    $password_err = "Ο κωδικός που έχετε εισάγει είναι λανθασμένος.";
+                }
+            }
 
-      /* Get the user credentials */
-      $result->data_seek(0);
-      $db_pass = $result->fetch_assoc()['password'];
-
-      /* Does the user exists, if yes do the passwords match */
-      if ($result->num_rows != 1) {
-        $username_err = 'Non existing user.';
-      } else {
-        if ($db_pass == $password) {
-          /*User authenticated , set a cookie for session managment */
-          $cookie_name = "username";
-          $cookie_val  = $username;
-          setcookie($cookie_name, $cookie_val, time() + (86400 * 3));
-          /* Redirect to home page */
-          header("Location: index.php");
-          die();
-        } else {
-          /* Display error message */
-          $password_err = 'The password you entered was not valid.';
+            /* Close the connection */
+            $db_connection->close();
         }
-      }
 
-      /* Close the connection */
-      $db_connection->close();
-
+        catch(Exception $e) {
+            echo "We cant handle your request because of the following error: ".$e->getMessage();
+        }
     }
-    catch(Exception $e){
-      echo "We cant hanndle your request because of the following error :".$e->getMessage();
-      die();
-    }
-  }
 }
 ?>
 
@@ -85,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <body>
 
     <!-- Include the header -->
-    <?php require_once(TEMPLATES_PATH. "/header.php"); ?>
+    <?php require_once(TEMPLATES_PATH."/header.php"); ?>
 
     <main>
         <div class="container">
@@ -95,13 +97,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <label for="name">Ψευδώνυμο χρήστη</label>
                     <div class="text-margin">
                     <input type="text" id="name" name="username" class="<?php echo (!empty($username_err)) ? 'has-error' : ''; ?>" autofocus>
-                    <span class="help-block"><?php echo $username_err; ?></span><br>
+                    <br><span class="help-block"><?php echo $username_err; ?></span><br>
                     </div>
 
                     <label for="pass">Συνθηματικό</label>
                     <div class="text-margin">
-                    <input type="text" id="pass" name="password" class="<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                    <span class="help-block"><?php echo $password_err; ?></span><br>
+                    <input type="password" id="pass" name="password" class="<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                    <br><span class="help-block"><?php echo $password_err; ?></span><br>
                     </div>
                     <a href="#">Ξεχάσατε το συνθηματικό σας;</a>
 
@@ -115,12 +117,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
 
             <div class="signup-box">
-                <p>Είστε νέος χρήστης; <a href="#">Εγγραφείτε</a>.</p>
+                <p>Είστε νέος χρήστης; <a href="signup.php">Εγγραφείτε</a>.</p>
             </div>
         </div>
     </main>  <!-- main -->
 
     <!-- Include the footer -->
-    <?php require_once(TEMPLATES_PATH . "/footer.php"); ?>
+    <?php require_once(TEMPLATES_PATH."/footer.php"); ?>
     </body>
 </html>

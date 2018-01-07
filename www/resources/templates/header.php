@@ -29,7 +29,7 @@
                   <div class="ddown" href="#"><?php echo $_COOKIE["username"];?> &#9660;</div>
 
                   <div class="dropdown-content">
-                      <a href="#"><span>Προφίλ</span></a>
+                      <a href="profile.php"><span>Προφίλ</span></a>
                       <a href="logout.php"><span>Έξοδος</span></a>
                   </div>
           </div></li>

@@ -84,7 +84,7 @@ input[type=submit]:hover {
     background-color: rgb(69, 160, 73);
 }
 
-span {
+span.help-block {
   font-size: 12px;
   color: red;
 }

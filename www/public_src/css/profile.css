@@ -31,7 +31,8 @@
     background-color: #f1f1f1;
 }
 
-button.tab-item {
+a.tab-item {
+    text-decoration:none;
     background-color: inherit;
     float: left;
     border: none;
@@ -40,11 +41,11 @@ button.tab-item {
     padding: 14px 22px;
 }
 
-button.tab-item:hover {
+a.tab-item:hover {
     background-color: #ddd;
 }
 
-button.tab-item.active {
+a.tab-item.active {
     background-color: #ccc;
 }
 

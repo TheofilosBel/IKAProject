@@ -28,10 +28,10 @@ require_once(__ROOT__."/resources/config.php");
 
             <div class="info-space">
                 <div class="tab-selector">
-                    <button class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογαριασμού
-                    <button class="tab-item" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία
-                    <button class="tab-item" onclick="openTab(event, 'history')">Ιστορικό Αιτήσεων
-                    <button class="tab-item" onclick="openTab(event, 'notifications')">Ειδοποιήσεις
+                    <a class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογριασμού</a>
+                    <a class="tab-item" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία</a>
+                    <a class="tab-item" onclick="openTab(event, 'history')">Ιστορικό Αιτήσεων</a>
+                    <a class="tab-item" onclick="openTab(event, 'notifications')">Ειδοποιήσεις</a>
                 </div> <!--  The tab selector bar -->
 
                 <div class="tab-content" id="account">

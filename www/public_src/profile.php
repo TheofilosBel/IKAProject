@@ -2,88 +2,81 @@
 define('__ROOT__', "../");
 require_once(__ROOT__."/resources/config.php");
 
-
-
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ΙΚΑ-ΠΡΟΦΙΛ</title>
-  <link rel="stylesheet" type="text/css" href="css/general_layout.css">
-  <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <meta charset="UTF-8">
+    <title>ΙΚΑ - Το Προφίλ μου</title>
+    <link rel="stylesheet" type="text/css" href="css/general_layout.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
 </head>
 
 <body>
+    <!-- Include the header -->
+    <?php require_once(TEMPLATES_PATH."/header.php");?>
 
-  <!-- Include the header -->
-  <?php require_once(TEMPLATES_PATH."/header.php");?>
+    <main>
+        <div class="container">
+            <div class="photo-space">
+                <div class="circle">
+                    <img src="" alt="">
+                </div> <!-- Circle for the photo -->
+                Username
+            </div> <!-- Photo space -->
 
-  <main>
+            <div class="info-space">
+                <div class="tab-selector">
+                    <button class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογαριασμού
+                    <button class="tab-item" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία
+                    <button class="tab-item" onclick="openTab(event, 'history')">Ιστορικό Αιτήσεων
+                    <button class="tab-item" onclick="openTab(event, 'notifications')">Ειδοποιήσεις
+                </div> <!--  The tab selector bar -->
 
-    <div class="container">
+                <div class="tab-content" id="account">
+                    account
+                </div> <!-- The account tab-->
 
-      <div class="photo-space">
+                <div class="tab-content" id="personal">
+                    personal
+                </div> <!-- The personal tab -->
 
-        <div class="circle">
-          <img src="" alt="">
-        </div>  <!-- Circle for the photo -->
+                <div class="tab-content" id="history">
+                    history
+                </div> <!-- The history tab -->
 
-        Username
-      </div> <!-- Photo space -->
+                <div class="tab-content" id="notifications">
+                    notification
+                </div>  <!-- The Notification tab -->
+            </div> <!-- User info space -->
+        </div> <!-- Container -->
+    </main>  <!-- End of main -->
 
-      <div class="info-space">
+    <!-- Include the footer -->
+    <?php require_once(TEMPLATES_PATH."/footer.php"); ?>
 
-        <div class="tab-selector">
-            <button class="bar-item" onclick="openTab('account')">Στοιχεία Λογαριασμού
-            <button class="bar-item" onclick="openTab('personal')">Προσωπικά Στεοιχεία
-            <button class="bar-item" onclick="openTab('request')">Ιστορικό Αιτήσεων
-            <button class="bar-item" onclick="openTab('notification')">Ειδοποιήσεις
-        </div>  <!--  The tab selector bar -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tab_items;
 
-        <div class="tab-container" id="account">
-          account
-        </div> <!-- The account tab-->
+            /* Hide all tabs */
+            var tabs = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
 
-        <div class="tab-container" id="personal">
-          personal
-        </div>  <!-- The personal tab -->
+            // Get all elements with class="tablinks" and remove the class "active"
+            tab_items = document.getElementsByClassName("tab-item");
+            for (i = 0; i < tab_items.length; i++) {
+                tab_items[i].className = tab_items[i].className.replace(" active", "");
+            }
 
-        <div class="tab-container" id="request">
-          request
-        </div> <!-- The Request tab -->
-
-        <div class="tab-container" id="notification">
-          notification
-        </div>  <!-- The Notification tab -->
-      </div> <!-- User info space -->
-    </div> <!-- Container -->
-
-  </main>  <!-- End of main -->
-
-  <!-- Include the footer -->
-  <?php require_once(TEMPLATES_PATH."/footer.php"); ?>
-
-
-  <script>
-  function openTab(tabName) {
-    var i;
-    var tabs = document.getElementsByClassName("tab-container");
-
-    /* Hide all tabs */
-    for (i = 0; i < tabs.length; i++) {
-      tabs[i].style.display = "none";
-    }
-
-    /* Display the one selected */
-    document.getElementById(tabName).style.display = "block";
-  }
-  </script>
-
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
-
 </html>

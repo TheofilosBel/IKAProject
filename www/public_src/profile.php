@@ -55,7 +55,7 @@ catch(Exception $e) {
 
             <div class="info-space">
                 <div class="tab-selector">
-                    <a class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογριασμού</a>
+                    <a class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογαριασμού</a>
                     <a class="tab-item" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία</a>
                     <a class="tab-item" onclick="openTab(event, 'history')">Ιστορικό Αιτήσεων</a>
                     <a class="tab-item" onclick="openTab(event, 'notifications')">Ειδοποιήσεις</a>

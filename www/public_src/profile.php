@@ -8,8 +8,9 @@ try {
     require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
 
     /* Get the id from the cookie */
-    $user_id = explode('*', $_COOKIE['user'])[1];
-    $user_name = explode('*', $_COOKIE['user'])[0];
+    $cookies = explode('*', $_COOKIE['user']);
+    $user_id = $cookies[1];
+    $user_name = $cookies[0];
 
     /* Query the db for the user_cred */
     $query = 'SELECT * FROM user_info WHERE id=\''.$user_id.'\';';

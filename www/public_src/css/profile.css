@@ -57,13 +57,18 @@ a.tab-item.active {
 }
 
 /* The Personal info display tab */
-div.info-container img {
+
+div.info-container .edit {
     display: none;
     justify-self: end;
+    margin: 0px 10px 0px 0px;
+    font-size: 12px;
+    color:blue;
+    cursor: pointer;
 }
 
-div.info-container:hover img{
-    display: block;
+div.info-container:hover .edit{
+    display: inline;
 }
 
 .info-container {

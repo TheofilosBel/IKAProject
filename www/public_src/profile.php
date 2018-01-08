@@ -55,7 +55,7 @@ catch(Exception $e) {
 
             <div class="info-space">
                 <div class="tab-selector">
-                    <a class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογριασμού</a>
+                    <a class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογαριασμού</a>
                     <a class="tab-item" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία</a>
                     <a class="tab-item" onclick="openTab(event, 'history')">Ιστορικό Αιτήσεων</a>
                     <a class="tab-item" onclick="openTab(event, 'notifications')">Ειδοποιήσεις</a>
@@ -70,21 +70,21 @@ catch(Exception $e) {
                         <span>Όνομα</span>
                         <span class="info-disp"><?php  echo $user_info['name']?></span>
                         <input />
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <span class="edit">Επεξεργασία</span>
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>Επίθετο</span>
                         <span class="info-disp"><?php  echo $user_info['surname']?></span>
                         <input />
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <span class="edit">Επεξεργασία</span>
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>ΑΜΚΑ</span>
                         <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
                         <input />
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <span class="edit">Επεξεργασία</span>
                     </div>
                     <hr>
                 </div> <!-- The personal tab -->

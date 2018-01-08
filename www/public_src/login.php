@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
 
             /* Query the db for the user_cred */
-            $query = 'SELECT password FROM user_cred WHERE username=\''.$username.'\';';
+            $query = 'SELECT password, id FROM user_cred WHERE username=\''.$username.'\';';
             $result = $db_connection->query($query);
             if (!$result) die($db_connection->error);
 
@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result->data_seek(0);
             $result_row = $result->fetch_assoc();
             $db_pass = $result_row['password'];
+            $db_id = $result_row['id'];
 
             /* Does the user exists, if yes do the passwords match */
             if ($result->num_rows != 1) {
@@ -52,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             else {
                 if ($db_pass == $password) {
                     /*User authenticated , set a cookie for session managment */
-                    $cookie_name = "username";
-                    $cookie_val  = $username;
+                    $cookie_name = "user";
+                    $cookie_val  = $username."*".$db_id;
                     setcookie($cookie_name, $cookie_val, time() + (86400 * 3));
                     /* Redirect to home page */
                     header("Location: index.php");

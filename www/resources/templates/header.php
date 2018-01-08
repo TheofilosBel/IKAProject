@@ -22,11 +22,11 @@
         </div></li>
 
         <!-- Check if we have a logged in user and change the header's layout -->
-        <?php if (!isset($_COOKIE["username"])){ ?>
+        <?php if (!isset($_COOKIE["user"])){ ?>
           <li><a class="non-ddown" href="./login.php"><img src="img/login.png" height="20" width="20">Είσοδος/Εγγραφή</a></li>
         <?php } else { ?>
           <li><div class="dropdown">
-                  <div class="ddown" href="#"><?php echo $_COOKIE["username"];?> &#9660;</div>
+                  <div class="ddown" href="#"><?php echo explode('*', $_COOKIE["user"])[0];?> &#9660;</div>
 
                   <div class="dropdown-content">
                       <a href="profile.php"><span>Προφίλ</span></a>

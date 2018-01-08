@@ -39,6 +39,7 @@ a.tab-item {
     outline: none;
     cursor: pointer;
     padding: 14px 22px;
+    transition: background-color 0.3s ease-out;
 }
 
 a.tab-item:hover {
@@ -54,3 +55,21 @@ a.tab-item.active {
     padding: 6px 12px;
     border-top: none;
 }
+
+/* The Personal info display tab */
+div.info-container img {
+    display: none;
+    justify-self: end;
+}
+
+div.info-container:hover img{
+    display: block;
+}
+
+.info-container {
+    margin-top:20px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/*-----------------------------*/

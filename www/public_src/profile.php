@@ -2,6 +2,31 @@
 define('__ROOT__', "../");
 require_once(__ROOT__."/resources/config.php");
 
+/* Query the db to have the information ready when needed */
+try {
+    /* Get the connection */
+    require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
+
+    /* Get the id from the cookie */
+    $user_id = explode('*', $_COOKIE['user'])[1];
+    $user_name = explode('*', $_COOKIE['user'])[0];
+
+    /* Query the db for the user_cred */
+    $query = 'SELECT * FROM user_info WHERE id=\''.$user_id.'\';';
+    $result = $db_connection->query($query);
+    if (!$result) die($db_connection->error);
+
+    /* Get the user info */
+    $result->data_seek(0);
+    $user_info = $result->fetch_assoc();
+
+    /* Close the connection */
+    $db_connection->close();
+}
+catch(Exception $e) {
+    echo "We cant handle your request because of the following error: ".$e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +48,7 @@ require_once(__ROOT__."/resources/config.php");
                 <div class="circle">
                     <img src="" alt="">
                 </div> <!-- Circle for the photo -->
-                Username
+                <span style="font-size:25px; padding:20px;"><?php echo $user_name?></span>
             </div> <!-- Photo space -->
 
             <div class="info-space">
@@ -39,7 +64,24 @@ require_once(__ROOT__."/resources/config.php");
                 </div> <!-- The account tab-->
 
                 <div class="tab-content" id="personal">
-                    personal
+                    <div class="info-container">
+                        <span class="info-disp">Όνομα</span>
+                        <span class="info-disp"><?php  echo $user_info['name']?></span>
+                        <img src="./img/edit.png" alt="" height="20" width="20">
+                    </div>
+                    <hr>
+                    <div class="info-container">
+                        <span class="info-disp">Επίθετο</span>
+                        <span class="info-disp"><?php  echo $user_info['surname']?></span>
+                        <img src="./img/edit.png" alt="" height="20" width="20">
+                    </div>
+                    <hr>
+                    <div class="info-container">
+                        <span class="info-disp">ΑΜΚΑ</span>
+                        <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
+                        <img src="./img/edit.png" alt="" height="20" width="20">
+                    </div>
+                    <hr>
                 </div> <!-- The personal tab -->
 
                 <div class="tab-content" id="history">

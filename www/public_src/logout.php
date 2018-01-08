@@ -1,8 +1,8 @@
 <?php
 /* See if there is a cookie */
-if (isset($_COOKIE["username"])) {
+if (isset($_COOKIE["user"])) {
     /* Delete it */
-    setcookie("username", "", time() - 3600);
+    setcookie("user", "", time() - 3600);
 }
 
 /* Redirect to home page */

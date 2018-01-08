@@ -69,21 +69,28 @@ catch(Exception $e) {
                     <div class="info-container">
                         <span>Όνομα</span>
                         <span class="info-disp"><?php  echo $user_info['name']?></span>
-                        <input />
+                        <input class="name"/>
                         <img src="./img/edit.png" class="edit" height="20" width="20">
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>Επίθετο</span>
                         <span class="info-disp"><?php  echo $user_info['surname']?></span>
-                        <input />
+                        <input class="surname"/>
                         <img src="./img/edit.png" class="edit" height="20" width="20">
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>ΑΜΚΑ</span>
                         <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
-                        <input />
+                        <input class="AMKA"/>
+                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                    </div>
+                    <hr>
+                    <div class="info-container">
+                        <span>email</span>
+                        <span class="info-disp"><?php  echo $user_info['email']?></span>
+                        <input class="email"/>
                         <img src="./img/edit.png" class="edit" height="20" width="20">
                     </div>
                     <hr>

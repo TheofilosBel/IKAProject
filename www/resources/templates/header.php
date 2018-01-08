@@ -26,7 +26,7 @@
           <li><a class="non-ddown" href="./login.php"><img src="img/login.png" height="20" width="20">Είσοδος/Εγγραφή</a></li>
         <?php } else { ?>
           <li><div class="dropdown">
-                  <div class="ddown" href="#"><?php echo explode('*', $_COOKIE["user"])[0];?> &#9660;</div>
+                  <div class="ddown" href="#"><?php $var=explode('*', $_COOKIE["user"]); echo $var[0];?> &#9660;</div>
 
                   <div class="dropdown-content">
                       <a href="profile.php"><span>Προφίλ</span></a>

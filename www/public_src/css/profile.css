@@ -72,4 +72,8 @@ div.info-container:hover img{
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+input {
+    display: none;
+}
 /*-----------------------------*/

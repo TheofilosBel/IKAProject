@@ -26,7 +26,6 @@ try {
 catch(Exception $e) {
     echo "We cant handle your request because of the following error: ".$e->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +35,8 @@ catch(Exception $e) {
     <title>ΙΚΑ - Το Προφίλ μου</title>
     <link rel="stylesheet" type="text/css" href="css/general_layout.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/profile_jquery.js"></script>
 </head>
 
 <body>
@@ -65,21 +66,24 @@ catch(Exception $e) {
 
                 <div class="tab-content" id="personal">
                     <div class="info-container">
-                        <span class="info-disp">Όνομα</span>
+                        <span>Όνομα</span>
                         <span class="info-disp"><?php  echo $user_info['name']?></span>
-                        <img src="./img/edit.png" alt="" height="20" width="20">
+                        <input />
+                        <img src="./img/edit.png" class="edit" height="20" width="20">
                     </div>
                     <hr>
                     <div class="info-container">
-                        <span class="info-disp">Επίθετο</span>
+                        <span>Επίθετο</span>
                         <span class="info-disp"><?php  echo $user_info['surname']?></span>
-                        <img src="./img/edit.png" alt="" height="20" width="20">
+                        <input />
+                        <img src="./img/edit.png" class="edit" height="20" width="20">
                     </div>
                     <hr>
                     <div class="info-container">
-                        <span class="info-disp">ΑΜΚΑ</span>
+                        <span>ΑΜΚΑ</span>
                         <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
-                        <img src="./img/edit.png" alt="" height="20" width="20">
+                        <input />
+                        <img src="./img/edit.png" class="edit" height="20" width="20">
                     </div>
                     <hr>
                 </div> <!-- The personal tab -->

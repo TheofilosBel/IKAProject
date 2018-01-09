@@ -6,15 +6,7 @@ main {
 }
 
 .tab-selector {
-    overflow: auto;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background-color: #f1f1f1;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
 }
 
 /* The General Info contaier */

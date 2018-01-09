@@ -7,7 +7,7 @@ require_once(__ROOT__."/resources/config.php");
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>ΙΚΑ-Υπολογισμός Σύνταξης</title>
+        <title>ΙΚΑ - Υπολογισμός Βασικού Ποσού Σύνταξης</title>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
         <link rel="stylesheet" type="text/css" href="css/tab_decoration.css">
         <link rel="stylesheet" type="text/css" href="css/pension_calc.css">
@@ -20,6 +20,8 @@ require_once(__ROOT__."/resources/config.php");
         <?php require_once(TEMPLATES_PATH."/header.php");?>
 
         <main>
+            <h1 style="margin-bottom: 25px;">Υπολογισμός Βασικού Ποσού Σύνταξης</h1>
+
             <div class="info-space">
                 <div class="tab-selector">
                     <a class="tab-item active" onclick="openTab(event, 'tool')">Εργαλείο Υπολογισμού</a>
@@ -30,17 +32,21 @@ require_once(__ROOT__."/resources/config.php");
                 <div class="tab-content active-tab" id="tool">
                     <div class="tool-info-container">
                         <span>Συνταξιοδοτικός Φορέας</span>
-                        <select name="pension-carrier">
-                            <option value="IKA">IKA</option>
-                            <option value="PIKA">PIKA</option>
-                            <option value="MIKA">MIKA</option>
-                        </select> <!-- End of Secelct -->
+                        <div class="select-style">
+                            <select name="pension-carrier">
+                                <option value="IKA">IKA</option>
+                                <option value="PIKA">PIKA</option>
+                                <option value="MIKA">MIKA</option>
+                            </select> <!-- End of Secelct -->
+                        </div>
 
                         <span>Τύπος Σύνταξης</span>
-                        <select name="pension-type">
-                            <option value="Simple">Απλή</option>
-                            <option value="Extra">Με απόλα</option>
-                        </select> <!-- End of Secelct -->
+                        <div class="select-style">
+                            <select name="pension-type">
+                                <option value="Simple">Απλή</option>
+                                <option value="Extra">Με απόλα</option>
+                            </select> <!-- End of Secelct -->
+                        </div>
 
                         <span>Σύνολο Ημερών Εργασίας</span>
                         <input type="text" name="num-of-days" value="0"/>

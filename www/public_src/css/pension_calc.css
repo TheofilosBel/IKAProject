@@ -1,15 +1,12 @@
-main {
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
 .tab-selector {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 div.info-space {
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
     width: 1050px;
 }
 
@@ -30,7 +27,7 @@ div.tool-info-container span {
     align-self: center;
 }
 
-div.tool-info-container select , div.tool-info-container input{
+div.tool-info-container input {
     align-self: center;
     padding: 0px 10px;
     width: 40%;
@@ -40,10 +37,18 @@ div.tool-info-container select , div.tool-info-container input{
     box-sizing: border-box;
 }
 
-div.tool-info-container input:focus, div.tool-info-container select:focus {
+div.tool-info-container input:focus {
     outline: none;
     width: 40%;
-    box-shadow: 0 0 4pt 1pt rgb(94, 158, 214);
+    border-color: rgb(33, 136, 255);
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2em rgba(3, 102, 214, 0.3);
+}
+
+div.tool-table-container input:focus {
+    outline: none;
+    width: 40%;
+    border-color: rgb(33, 136, 255);
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2em rgba(3, 102, 214, 0.3);
 }
 
 /* The table container */
@@ -53,30 +58,60 @@ div.tool-table-container {
     grid-template-rows: auto;
 }
 
-/* The container needed to align the buttons*/
+/* The container needed to align the buttons */
 .align-container {
     margin: 0 auto;
     align: center;
     width: 50%;
 }
 
-button.calculate{
-    border-radius: 15px;
-    height: 60px;
-    width: 200px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: rgb(14, 153, 203);
+button.calculate {
+    background-color: rgba(0, 120, 180, 1);
+    border: none;
     color: white;
-    margin-right: 30px;
+    padding: 22px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 36px 12px;
+    cursor: pointer;
 }
 
-button.clean{
-    border-radius: 10px;
-    height: 30px;
-    font-size: 14px;
-    font-weight: bold;
+button.clean {
     background-color: rgb(153, 170, 176);
-    width: 100px;
-    color: black;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 36px 12px;
+    cursor: pointer;
+}
+
+/* Select style */
+.select-style {
+    border: 1px solid #ccc;
+    width: 40%;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
 }

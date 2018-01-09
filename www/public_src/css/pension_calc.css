@@ -9,6 +9,10 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+div.info-space {
+    width: 1050px;
+}
+
 /* The General Info contaier */
 div.tool-info-container {
     display: grid;

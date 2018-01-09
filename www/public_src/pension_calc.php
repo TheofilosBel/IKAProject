@@ -6,6 +6,8 @@ require_once(__ROOT__."/resources/config.php");
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <title>ΙΚΑ-Υπολογισμός Σύνταξης</title>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
         <link rel="stylesheet" type="text/css" href="css/tab_decoration.css">
         <link rel="stylesheet" type="text/css" href="css/pension_calc.css">

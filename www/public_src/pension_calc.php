@@ -21,7 +21,7 @@ require_once(__ROOT__."/resources/config.php");
             <div class="info-space">
                 <div class="tab-selector">
                     <a class="tab-item active" onclick="openTab(event, 'tool')">Εργαλείο Υπολογισμού</a>
-                    <a class="tab-item" onclick="openTab(event, 'help')">Οδηγίες Χρήσεις Εργαλείου</a>
+                    <a class="tab-item" onclick="openTab(event, 'help')">Οδηγίες Χρήσης Εργαλείου</a>
                     <a class="tab-item" onclick="openTab(event, 'info')">Γενικές Πληροφορίες Σύνταξης</a>
                 </div> <!--  The tab selector bar -->
 

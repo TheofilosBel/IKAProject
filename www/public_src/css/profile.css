@@ -22,40 +22,6 @@
     box-sizing: border-box;
 }
 
-.tab-selector {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background-color: #f1f1f1;
-}
-
-a.tab-item {
-    text-decoration:none;
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 22px;
-    transition: background-color 0.3s ease-out;
-}
-
-a.tab-item:hover {
-    background-color: #ddd;
-}
-
-a.tab-item.active {
-    background-color: #ccc;
-}
-
-.tab-content {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
-}
-
 /* The Personal info display tab */
 
 div.info-container .edit, div.info-container .save {

@@ -36,8 +36,10 @@ catch(Exception $e) {
     <title>ΙΚΑ - Το Προφίλ μου</title>
     <link rel="stylesheet" type="text/css" href="css/general_layout.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/tab_decoration.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/profile_jquery.js"></script>
+    <script src="./js/tab_handler.js"></script>
 </head>
 
 <body>
@@ -56,7 +58,7 @@ catch(Exception $e) {
             <div class="info-space">
                 <div class="tab-selector">
                     <a class="tab-item" onclick="openTab(event, 'account')">Στοιχεία Λογαριασμού</a>
-                    <a class="tab-item" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία</a>
+                    <a class="tab-item active" onclick="openTab(event, 'personal')">Προσωπικά Στοιχεία</a>
                     <a class="tab-item" onclick="openTab(event, 'history')">Ιστορικό Αιτήσεων</a>
                     <a class="tab-item" onclick="openTab(event, 'notifications')">Ειδοποιήσεις</a>
                 </div> <!--  The tab selector bar -->
@@ -65,7 +67,7 @@ catch(Exception $e) {
                     account
                 </div> <!-- The account tab-->
 
-                <div class="tab-content" id="personal">
+                <div class="tab-content active-tab" id="personal">
                     <div class="info-container">
                         <span style="margin-top:10px;"><b>Όνομα</b></span>
                         <span class="info-disp"><?php  echo $user_info['name']?></span>
@@ -113,28 +115,6 @@ catch(Exception $e) {
 
     <!-- Include the footer -->
     <?php require_once(TEMPLATES_PATH."/footer.php"); ?>
-
-    <script>
-        function openTab(evt, tabName) {
-            var i, tab_items;
-
-            /* Hide all tabs */
-            var tabs = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tab_items = document.getElementsByClassName("tab-item");
-            for (i = 0; i < tab_items.length; i++) {
-                tab_items[i].className = tab_items[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
 
 </body>
 </html>

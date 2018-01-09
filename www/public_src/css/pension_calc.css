@@ -1,0 +1,74 @@
+main {
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* The General Info contaier */
+div.tool-info-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-row-gap: 20px;
+}
+
+div.tool-info-container .align-start {
+    align-self: start;
+}
+
+div.tool-info-container span {
+    font-weight: bold;
+    align-self: center;
+}
+
+div.tool-info-container select , div.tool-info-container input{
+    align-self: center;
+    padding: 0px 10px;
+    width: 40%;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+div.tool-info-container input:focus, div.tool-info-container select:focus {
+    outline: none;
+    width: 40%;
+    box-shadow: 0 0 4pt 1pt rgb(94, 158, 214);
+}
+
+/* The table container */
+div.tool-table-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+/* The container needed to align the buttons*/
+.align-container {
+    margin: 0 auto;
+    align: center;
+    width: 50%;
+}
+
+button.calculate{
+    border-radius: 15px;
+    height: 60px;
+    width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(14, 153, 203);
+    color: white;
+    margin-right: 30px;
+}
+
+button.clean{
+    border-radius: 10px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(153, 170, 176);
+    width: 100px;
+    color: black;
+}

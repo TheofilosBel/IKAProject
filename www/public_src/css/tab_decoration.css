@@ -1,0 +1,43 @@
+/* The tab handling css */
+.tab-selector {
+    overflow: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #f1f1f1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+a.tab-item {
+    text-decoration: none;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 22px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-out;
+}
+
+a.tab-item:hover {
+    background-color: #ddd;
+}
+
+a.tab-item.active {
+    background-color: #ccc;
+}
+
+.tab-content {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.active-tab {
+    display: block;
+}
+/*-----------------------*/

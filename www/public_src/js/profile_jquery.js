@@ -13,7 +13,7 @@ $(document).ready(function(){
     /* When clicking the edit button switch to input */
     $(".edit").click(function(){
         var $span = $(this).siblings("span.info-disp");
-        $span.hide().siblings("input").val($span.text()).show();
+        $span.hide().siblings("input").val($span.text()).show().focus();
         $(this).hide().siblings(".save").show();
     });
 
@@ -39,7 +39,7 @@ $(document).ready(function(){
             /* Check the response */
             if(data != "OK") {
                 /* In case of an error alert the user */
-                alert("Κατι πηγε στραβα, επικοινωνιστε με DIT-IKA-TEAM");
+                alert("Κάτι πήγε στραβά, επικοινωνήστε με DIT-IKA-TEAM");
             } else {
                 /* Else change the text of span to the new value */
                 text_of_span = $input.val();
@@ -47,7 +47,7 @@ $(document).ready(function(){
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             /* In case of failure give an error */
-            alert( "Κατι πηγε στραβα, επικοινωνιστε με DIT-IKA-TEAM.\nRequest failed: " + textStatus );
+            alert("Κάτι πήγε στραβά, επικοινωνάστε με DIT-IKA-TEAM.\nRequest failed: " + textStatus );
         })
         .always(function() {
             /* Alwasy hide the input and put the span elemnent back */
@@ -64,7 +64,7 @@ $(document).ready(function(){
         $this.siblings(".save").hide();
         $this.siblings(".edit").hide();
 
-        /* Alwasy hide the input and put the span elemnent back */
+        /* Always hide the input and put the span elemnent back */
         $this.hide().siblings("span.info-disp").text(text_of_span).show();
     });
 });

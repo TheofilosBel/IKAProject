@@ -1,19 +1,35 @@
 $(document).ready(function(){
 
+    /* When hovering */
+    $(".info-container").hover(function(){
+        if($(this).children(".save").is(":visible") == false){
+            $(this).children(".edit").show();
+        }
+    },
+    function(){
+        $(this).children(".edit").hide();
+    });
+
     /* When clicking the edit button switch to input */
     $(".edit").click(function(){
         var $span = $(this).siblings("span.info-disp");
         $span.hide().siblings("input").val($span.text()).show();
+        $(this).hide().siblings(".save").show();
     });
 
-    /* Switch back to span when we click outside the input */
-    $("input").on("blur", function(){
+    /* When clicking .save p send an ajax call to change the data */
+    $(".save").mousedown(function(){
         var $this = $(this);
         var text_of_span = $this.siblings("span.info-disp").text();
 
+        /* Hide all the extra functionality */
+        $this.siblings(".save").hide();
+        $this.siblings(".edit").hide();
+
         /* Do an ajax call to update the db */
-        var key = $this.attr('class');
-        var value = $this.val();
+        var $input = $this.siblings("input");
+        var key = $input.attr('class');
+        var value = $input.val();
         $.ajax({
                 url: "./update_handler.php",
                 type: "POST",
@@ -26,7 +42,7 @@ $(document).ready(function(){
                 alert("Κατι πηγε στραβα, επικοινωνιστε με DIT-IKA-TEAM");
             } else {
                 /* Else change the text of span to the new value */
-                text_of_span = $this.val();
+                text_of_span = $input.val();
             }
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
@@ -37,5 +53,18 @@ $(document).ready(function(){
             /* Alwasy hide the input and put the span elemnent back */
             $this.hide().siblings("span.info-disp").text(text_of_span).show();
         });
+    });
+
+    /* Switch back to span when we click outside the input */
+    $("input").on("blur", function(){
+        var $this = $(this);
+        var text_of_span = $this.siblings("span.info-disp").text();
+
+        /* Hide all the extra functionality */
+        $this.siblings(".save").hide();
+        $this.siblings(".edit").hide();
+
+        /* Alwasy hide the input and put the span elemnent back */
+        $this.hide().siblings("span.info-disp").text(text_of_span).show();
     });
 });

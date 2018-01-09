@@ -70,28 +70,32 @@ catch(Exception $e) {
                         <span>Όνομα</span>
                         <span class="info-disp"><?php  echo $user_info['name']?></span>
                         <input class="name"/>
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <p class="save">Αποθήκευση</p>
+                        <p class="edit">Επεξεργασία</p>
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>Επίθετο</span>
                         <span class="info-disp"><?php  echo $user_info['surname']?></span>
                         <input class="surname"/>
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <p class="save">Αποθήκευση</p>
+                        <p class="edit">Επεξεργασία</p>
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>ΑΜΚΑ</span>
                         <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
                         <input class="AMKA"/>
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <p class="save">Αποθήκευση</p>
+                        <p class="edit">Επεξεργασία</p>
                     </div>
                     <hr>
                     <div class="info-container">
                         <span>email</span>
                         <span class="info-disp"><?php  echo $user_info['email']?></span>
                         <input class="email"/>
-                        <img src="./img/edit.png" class="edit" height="20" width="20">
+                        <p class="save">Αποθήκευση</p>
+                        <p class="edit">Επεξεργασία</p>
                     </div>
                     <hr>
                 </div> <!-- The personal tab -->

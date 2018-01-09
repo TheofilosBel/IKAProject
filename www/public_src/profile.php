@@ -35,8 +35,8 @@ catch(Exception $e) {
     <meta charset="UTF-8">
     <title>ΙΚΑ - Το Προφίλ μου</title>
     <link rel="stylesheet" type="text/css" href="css/general_layout.css">
-    <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/tab_decoration.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/profile_jquery.js"></script>
     <script src="./js/tab_handler.js"></script>

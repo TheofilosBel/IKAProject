@@ -72,7 +72,7 @@ div.info-container .edit, div.info-container .save {
     display: grid;
     height: 40px;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 5fr 1fr;
 }
 
 input {

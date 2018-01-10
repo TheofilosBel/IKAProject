@@ -67,12 +67,12 @@ require_once(__ROOT__."/resources/config.php");
                                 }
                             ?>
                         </div>  <!-- End of the table Div -->
-                    </div>  <!--End of The General Info Div -->
 
-                    <div class="align-container">
-                        <button type="button" class="calculate">Υπολογισμός</button>
-                        <button type="button" class="clean">Καθαρισμός</button>
-                    </div>  <!-- End of the Align Div -->
+                        <div class="align-container">
+                            <button type="button" class="calculate">Υπολογισμός</button>
+                            <button type="button" class="clean">Καθαρισμός</button>
+                        </div>  <!-- End of the Align Div -->
+                    </div>  <!--End of The General Info Div -->
                 </div> <!-- The Main Tool tab-->
 
                 <div class="tab-content" id="help">

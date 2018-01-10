@@ -60,8 +60,10 @@ div.tool-table-container {
 
 /* The container needed to align the buttons */
 .align-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
     margin: 0 auto;
-    align: center;
+    align: left
     width: 50%;
 }
 
@@ -75,7 +77,7 @@ button.calculate {
     display: inline-block;
     font-size: 16px;
     border-radius: 8px;
-    margin: 36px 12px;
+    margin: 16px 12px 12px 110px;
     cursor: pointer;
 }
 
@@ -89,7 +91,7 @@ button.clean {
     display: inline-block;
     font-size: 16px;
     border-radius: 8px;
-    margin: 36px 12px;
+    margin: 16px 12px 12px 0px;
     cursor: pointer;
 }
 

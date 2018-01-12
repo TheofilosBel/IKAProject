@@ -14,8 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /* Get a connection */
         require_once(DBMANAGMENT_PATH."/mysqlConnector.php");
 
+        /* Get the user id from the cookie */
+        $cookies = explode('*', $_COOKIE['user']);
+        $user_id = $cookies[1];
+
+
         /* Query the db */
-        $query = 'UPDATE user_info SET '.$keys[0].'=\''.$_POST[$keys[0]].'\';';
+        $query = 'UPDATE user_info SET '.$keys[0].'=\''.$_POST[$keys[0]].'\' WHERE id='.$user_id.';';
         if ($db_connection->query($query) !== TRUE) {
             echo "Error when updateing :".$db_connection->error;
         }

@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             else {
                 if ($db_pass == $password) {
-                    /*User authenticated , set a cookie for session managment */
+                    /* User authenticated, set a cookie for session management */
                     $cookie_name = "user";
                     $cookie_val  = $username."*".$db_id;
                     setcookie($cookie_name, $cookie_val, time() + (86400 * 3));

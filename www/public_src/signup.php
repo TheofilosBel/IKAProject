@@ -5,12 +5,20 @@ define('__ROOT__', "../");
 require_once(__ROOT__."/resources/config.php");
 
 /* Define variables and initialize with empty values */
-$username = $password = $password_confirm = "";
-$username_err = $password_err = $password_confirm_err = "";
+$email = $username = $password = $password_confirm = "";
+$email_err = $username_err = $password_err = $password_confirm_err = "";
 
 /* Processing form data when form is submitted */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    /* Check if password and username are filled */
+    /* Check if email is empty */
+    if (empty($_POST['email'])) {
+        $email_err = "Εισάγετε τη διεύθυνση ηλ. ταχυδρομείου (email) σας.";
+    }
+    else {
+        $email = $_POST['email'];
+    }
+
+    /* Check if username is empty */
     if (empty($_POST["username"])) {
         $username_err = "Εισάγετε το ψευδώνυμο χρήστη σας.";
     }
@@ -34,13 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password_confirm = $_POST['password_confirm'];
     }
 
-    if (empty($username_err) && empty($password_err) && empty($password_confirm_err)) {
-        /* Get the username and password */
+    if (empty($email_err) && empty($username_err) && empty($password_err) && empty($password_confirm_err)) {
+        /* Get the data */
+        $email = $_POST['email'];
         $username = $_POST['username'];
         $password = $_POST['password'];
         $password_confirm = $_POST['password_confirm'];
 
-        /* Passwords must have at leas 4 characters */
+        /* Passwords must have at least 4 characters */
         if (strlen($password) < 4) {
             $password_err = "Το συνθηματικό πρέπει να περιέχει τουλάχιστον 4 χαρακτήρες.";
         }
@@ -67,6 +76,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             else {
                 /* Insert the user creadentials into the database */
                 $query = 'INSERT INTO user_cred(username, password) VALUES (\''.$username.'\', \''.$password.'\');';
+                $result = $db_connection->query($query);
+                if (!$result) die($db_connection->error);
+
+                /* Get the id of the user */
+                $query = 'SELECT id FROM user_cred WHERE username=\''.$username.'\';';
+                $result = $db_connection->query($query);
+                if (!$result) die($db_connection->error);
+                
+                $result->data_seek(0);
+                $result_row = $result->fetch_assoc();
+                $db_id = $result_row['id'];
+
+                $query = 'INSERT INTO user_info(id, name, surname, email, telephone, AMKA)
+                    VALUES (\''.$db_id.'\', NULL, NULL, \''.$email.'\', NULL, NULL);';
                 $result = $db_connection->query($query);
                 if (!$result) die($db_connection->error);
 
@@ -109,6 +132,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Εγγραφή στο ΙΚΑ</h1>
             <div class="login-box">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <label for="email">Διεύθυνση Ηλ. Ταχυδρομείου (email)</label>
+                    <div class="text-margin">
+                    <input type="text" id="email" name="email" class="<?php echo (!empty($email_err)) ? 'has-error' : ''; ?>" autofocus>
+                    <br><span class="help-block"><?php echo $email_err; ?></span><br>
+                    </div>
+
                     <label for="name">Ψευδώνυμο χρήστη</label>
                     <div class="text-margin">
                     <input type="text" id="name" name="username" class="<?php echo (!empty($username_err)) ? 'has-error' : ''; ?>" autofocus>

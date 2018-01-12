@@ -28,7 +28,7 @@ div.tool-info-container span {
     width: 100%;
 }
 
-button.print {
+input.print {
     background-color: rgba(0, 120, 180, 1);
     border: none;
     color: white;
@@ -43,6 +43,7 @@ button.print {
 }
 
 /* Select style */
+
 .select-style {
     border: 1px solid #ccc;
     width: 40%;
@@ -63,4 +64,10 @@ button.print {
 
 .select-style select:focus {
     outline: none;
+}
+
+div.tool-info-container span.help-block {
+  font-size: 12px;
+  font-weight: normal;
+  color: red;
 }

@@ -101,11 +101,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $surname = $result_row['surname'];
             $telephone = $result_row['telephone'];
             $AMKA = $result_row['AMKA'];
+            $AFM = $result_row['AFM'];
 
             if (IsEmptyString($name) ||
                     IsEmptyString($surname) ||
                     IsEmptyString($telephone) ||
-                    IsEmptyString($AMKA)) {
+                    IsEmptyString($AMKA) ||
+                    IsEmptyString($AFM)) {
                 $message_err = "Συμπληρώστε όλα τα στοιχεία με αστερίσκο στο προφίλ σας για να συνεχίσετε.";
             }
 
@@ -140,13 +142,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdf->SetFont('DejaVu-B','',12);
                 $pdf->Cell(35,10,'ΑΜΚΑ:');
                 $pdf->SetFont('DejaVu','',12);
-                $pdf->Cell(60,10,$telephone);
+                $pdf->Cell(60,10,$AMKA);
+                $pdf->Ln(10);
+
+                $pdf->SetFont('DejaVu-B','',12);
+                $pdf->Cell(35,10,'ΑFΜ:');
+                $pdf->SetFont('DejaVu','',12);
+                $pdf->Cell(60,10,$AFM);
                 $pdf->Ln(10);
 
                 $pdf->SetFont('DejaVu-B','',12);
                 $pdf->Cell(35,10,'Τηλέφωνο:');
                 $pdf->SetFont('DejaVu','',12);
-                $pdf->Cell(60,10,$AMKA);
+                $pdf->Cell(60,10,$telephone);
                 $pdf->Ln(20);
 
                 /* Text */
@@ -155,7 +163,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdf->MultiCell(0,5, 'Χορηγείται για κάθε νόμιμη χρήση ο ατομικός λογαριασμός ασφάλισης για την περίοδο:');
                 $pdf->Ln(5);
                 $pdf->Cell(20);
+                $pdf->SetFont('DejaVu','U',12);
                 $pdf->MultiCell(0,5,$month[$month_from-1].' '.$year_from.' - '.$month[$month_to-1].' '.$year_to);
+                $pdf->Ln(10);
+                $pdf->SetFont('DejaVu','',12);
+
+                /* Print the time interval */
+                $counter = 0;
+                $random = 0;
+                for ($i = $year_from; $i <= $year_to; $i++) {
+                    /* Print the starting year */
+                    if ($i == $year_from) {
+                        for ($j = $month_from-1; $j < 12; $j++) {
+                            $pdf->Cell(20);
+                            $pdf->Cell(50, 10, $month[$j].' '.$i.': ');
+                            $random = rand(20, 25);
+                            $counter += $random;
+                            $pdf->Cell(15, 10, $random, 0, 1);
+                        }
+                    }
+
+                    /* Print the ending year */
+                    elseif ($i == $year_to) {
+                        for ($j = 0; $j < $month_to; $j++) {
+                            $pdf->Cell(20);
+                            $pdf->Cell(50, 10, $month[$j].' '.$i.': ');
+                            $random = rand(20, 25);
+                            $counter += $random;
+                            $pdf->Cell(15, 10, $random, 0, 1);
+                        }
+                    }
+
+                    /* Print the years in between */
+                    else {
+                        for ($j = 0; $j < 12; $j++) {
+                            $pdf->Cell(20);
+                            $pdf->Cell(50, 10, $month[$j].' '.$i.': ');
+                            $random = rand(20, 25);
+                            $counter += $random;
+                            $pdf->Cell(15, 10, $random, 0, 1);
+                        }
+                    }
+                }
+
+                /* Print the total */
+                $pdf->Cell(20);
+                $pdf->SetFont('DejaVu-B','',12);
+                $pdf->Cell(50,10,'Σύνολο: ');
+                $pdf->SetFont('DejaVu','',12);
+                $pdf->Cell(15, 10, $counter, 0, 1);
             
                 /* Create */
                 $pdf->Output();

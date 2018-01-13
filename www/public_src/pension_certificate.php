@@ -67,14 +67,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $surname = $result_row['surname'];
             $telephone = $result_row['telephone'];
             $AMKA = $result_row['AMKA'];
-/*
+            $AFM = $result_row['AFM'];
+
             if (IsEmptyString($name) ||
                     IsEmptyString($surname) ||
                     IsEmptyString($telephone) ||
-                    IsEmptyString($AMKA)) {
+                    IsEmptyString($AMKA) ||
+                    IsEmptyString($AFM)) {
                 $message_err = "Συμπληρώστε όλα τα στοιχεία με αστερίσκο στο προφίλ σας για να συνεχίσετε.";
             }
-*/
+
             if (empty($message_err)) {
                 /* Create a new pdf with the user's info */
                 require('tfpdf/tfpdf.php');
@@ -106,13 +108,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdf->SetFont('DejaVu-B','',12);
                 $pdf->Cell(35,10,'ΑΜΚΑ:');
                 $pdf->SetFont('DejaVu','',12);
-                $pdf->Cell(60,10,$telephone);
+                $pdf->Cell(60,10,$AMKA);
+                $pdf->Ln(10);
+
+                $pdf->SetFont('DejaVu-B','',12);
+                $pdf->Cell(35,10,'ΑFΜ:');
+                $pdf->SetFont('DejaVu','',12);
+                $pdf->Cell(60,10,$AFM);
                 $pdf->Ln(10);
 
                 $pdf->SetFont('DejaVu-B','',12);
                 $pdf->Cell(35,10,'Τηλέφωνο:');
                 $pdf->SetFont('DejaVu','',12);
-                $pdf->Cell(60,10,$AMKA);
+                $pdf->Cell(60,10,$telephone);
                 $pdf->Ln(20);
 
                 /* Text */

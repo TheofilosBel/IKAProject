@@ -16,6 +16,7 @@ div.tool-info-container {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     grid-row-gap: 20px;
+    padding: 10px;
 }
 
 div.tool-info-container .align-start {

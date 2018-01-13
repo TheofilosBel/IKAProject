@@ -47,9 +47,6 @@ require_once(__ROOT__."/resources/config.php");
                                 <option value="Extra">Αναπηρική</option>
                             </select> <!-- End of Secelct -->
                         </div>
-
-                        <span>Σύνολο Ημερών Εργασίας:</span>
-                        <input type="text" name="num-of-days" class="num-of-days" value="0"/>
                     </div>  <!--End of The General Info Div -->
                     <hr>
 
@@ -89,12 +86,7 @@ require_once(__ROOT__."/resources/config.php");
                 <script type="text/javascript">
                     function compute() {
                         var str_input;
-                        var total_num_of_days;
                         var flag;
-
-                        /* Get num_of_days value */
-                        if (document.getElementsByClassName("num-of-days")[0].value)
-                            total_num_of_days = parseInt(document.getElementsByClassName("num-of-days")[0].value);
 
                         /* Get the data from the form */
                         var total_apodoxes = 0;
@@ -123,13 +115,6 @@ require_once(__ROOT__."/resources/config.php");
                                     return;
                                 }
                             }
-                        }
-
-                        /* Error check total days */
-                        if (total_num_of_days != total_hmeres) {
-                            document.getElementsByClassName("help-block")[0].innerHTML = "Το Σύνολο Ημερών Εργασίας\
-                            δεν ισούται με το άθροισμα των ημερών εργασίας που έχετε εισάγει.";
-                            return;
                         }
 
                         /* Compute the pension amount */

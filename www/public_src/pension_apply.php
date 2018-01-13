@@ -9,72 +9,71 @@ function IsEmptyString($str) {
 /* Check if a user is loged in and redirect him to log in page if not */
 require_once(SCRIPTS_PATH."/login_check_deref.php");
 
+$citizen = $pension_type = "";
 $name = $surname = $telephone = $AMKA = $AFM = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['citizen'])) {
-        $citizen = $_POST['citizen'];
+if (isset($_POST['citizen'])) {
+    $citizen = $_POST['citizen'];
+}
+
+if (isset($_POST['pension-type'])) {
+    $pension_type = $_POST['pension-type'];
+}
+
+/* Connect to the database and retrieve the personal info */
+try {
+    /* Get the connection */
+    require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
+
+    /* Check if the user is logged in */
+    $cookie_name = "user";
+
+    if (!isset($_COOKIE[$cookie_name])) {
+        die();
+    }
+    else {
+        $cookie_value = $_COOKIE[$cookie_name];
     }
 
-    if (isset($_POST['pension-type'])) {
-        $pension_type = $_POST['pension-type'];
+    /* Get the username the cookie value (username*userid) */
+    $username = strtok($cookie_value, "*");
+
+    /* Query the db for the user_cred */
+    $query = 'SELECT id FROM user_cred WHERE username=\''.$username.'\';';
+    $result = $db_connection->query($query);
+    if (!$result) die($db_connection->error);
+
+    $result->data_seek(0);
+    $result_row = $result->fetch_assoc();
+    $db_id = $result_row['id'];
+
+    /* Query the db for the user_info */
+    $query = 'SELECT * FROM user_info WHERE id=\''.$db_id.'\';';
+    $result = $db_connection->query($query);
+    if (!$result) die($db_connection->error);
+
+    $result->data_seek(0);
+    $result_row = $result->fetch_assoc();
+
+    /* Get the user's info and check if they are empty */
+    $name = $result_row['name'];
+    $surname = $result_row['surname'];
+    $telephone = $result_row['telephone'];
+    $AMKA = $result_row['AMKA'];
+    $AFM = $result_row['AFM'];
+
+    if (IsEmptyString($name) ||
+            IsEmptyString($surname) ||
+            IsEmptyString($telephone) ||
+            IsEmptyString($AMKA) ||
+            IsEmptyString($AFM)) {
+        $message_err = "Συμπληρώστε όλα τα στοιχεία με αστερίσκο στο προφίλ σας για να συνεχίσετε.";
     }
-
-    /* Connect to the database and retrieve the personal info */
-    try {
-        /* Get the connection */
-        require_once(DBMANAGMENT_PATH.'/mysqlConnector.php');
-
-        /* Check if the user is logged in */
-        $cookie_name = "user";
-
-        if (!isset($_COOKIE[$cookie_name])) {
-            die();
-        }
-        else {
-            $cookie_value = $_COOKIE[$cookie_name];
-        }
-
-        /* Get the username the cookie value (username*userid) */
-        $username = strtok($cookie_value, "*");
-
-        /* Query the db for the user_cred */
-        $query = 'SELECT id FROM user_cred WHERE username=\''.$username.'\';';
-        $result = $db_connection->query($query);
-        if (!$result) die($db_connection->error);
-
-        $result->data_seek(0);
-        $result_row = $result->fetch_assoc();
-        $db_id = $result_row['id'];
-
-        /* Query the db for the user_info */
-        $query = 'SELECT * FROM user_info WHERE id=\''.$db_id.'\';';
-        $result = $db_connection->query($query);
-        if (!$result) die($db_connection->error);
-
-        $result->data_seek(0);
-        $result_row = $result->fetch_assoc();
-
-        /* Get the user's info and check if they are empty */
-        $name = $result_row['name'];
-        $surname = $result_row['surname'];
-        $telephone = $result_row['telephone'];
-        $AMKA = $result_row['AMKA'];
-        $AFM = $result_row['AFM'];
-
-        if (IsEmptyString($name) ||
-                IsEmptyString($surname) ||
-                IsEmptyString($telephone) ||
-                IsEmptyString($AMKA) ||
-                IsEmptyString($AFM)) {
-            $message_err = "Συμπληρώστε όλα τα στοιχεία με αστερίσκο στο προφίλ σας για να συνεχίσετε.";
-        }
-    }
+}
 
     catch(Exception $e) {
         echo "We cant handle your request because of the following error: ".$e->getMessage();
     }
-}
 ?>
 
 <!DOCTYPE html>
@@ -116,19 +115,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <span>Όνομα:</span>
-                        <input type="text" id="name" name="name" class="name" value="<?php isset($name)?$name:""; ?>" disabled>
+                        <input type="text" id="name" name="name" class="name" value="<?= $name; ?>" disabled>
 
                         <span>Επίθετο:</span>
-                        <input type="text" id="surname" name="surname" class="surname" disabled>
+                        <input type="text" id="surname" name="surname" class="surname" value="<?= $surname; ?>" disabled>
 
                         <span>Τηλέφωνο:</span>
-                        <input type="text" id="tele" name="tele" class="tele" disabled>
+                        <input type="text" id="tele" name="tele" class="tele" value="<?= $telephone; ?>" disabled>
 
                         <span>ΑΜΚΑ:</span>
-                        <input type="text" id="amka" name="amka" class="amka" disabled>
+                        <input type="text" id="amka" name="amka" class="amka" value="<?= $AMKA; ?>" disabled>
 
                         <span>ΑΦΜ:</span>
-                        <input type="text" id="afm" name="afm" class="afm" disabled>
+                        <input type="text" id="afm" name="afm" class="afm" value="<?= $AFM; ?>" disabled>
 
                         <br><span class="help-block"><?php echo $message_err; ?></span><br>
 

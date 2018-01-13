@@ -49,7 +49,7 @@ require_once(__ROOT__."/resources/config.php");
                         </div>
 
                         <span>Σύνολο Ημερών Εργασίας</span>
-                        <input type="text" name="num-of-days" value="0"/>
+                        <input type="text" name="num-of-days" class="num-of-days" value="0"/>
                     </div>  <!--End of The General Info Div -->
                     <hr>
 
@@ -62,18 +62,37 @@ require_once(__ROOT__."/resources/config.php");
                             <span>Ημέρες Εργασίας</span>
                             <?php
                                 $curent_year = date("Y") - 1;
-                                for ($y = 0; $y < 10; $y++){
-                                    echo '<p>'.($curent_year-$y).'</p>'.'<input /><input />';
+                                for ($y = 0; $y < 10; $y++) {
+                                    echo '<p>'.($curent_year-$y).'</p>'.'<input class="apodoxes"/><input class="hmeres"/>';
                                 }
                             ?>
                         </div>  <!-- End of the table Div -->
 
                         <div class="align-container">
-                            <button type="button" class="calculate">Υπολογισμός</button>
+                            <button type="button" class="calculate" onclick="compute()">Υπολογισμός</button>
                             <button type="button" class="clean">Καθαρισμός</button>
                         </div>  <!-- End of the Align Div -->
                     </div>  <!--End of The General Info Div -->
                 </div> <!-- The Main Tool tab-->
+
+                <script type="text/javascript">
+                    function compute() {
+                        /* Get num_of_days value */
+                        var total_num_of_days = document.getElementsByClassName("num-of-days").value;
+
+                        /* Get the data from the form */
+                        var total_apodoxes = 0;
+                        var total_hmeres = 0;
+                        for (i = 0; i < 10; i++) {
+                            total_apodoxes += document.getElementsByClassName("apodoxes")[i].value;
+                            total_hmeres += document.getElementsByClassName("hmeres")[i].value;
+                        }
+
+                        document.write(total_num_of_days);
+                        document.write(total_apodoxes);
+                        document.write(total_hmeres);
+                    }
+                </script>
 
                 <div class="tab-content" id="help">
                     HELP

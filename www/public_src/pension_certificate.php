@@ -6,6 +6,20 @@ function IsEmptyString($str) {
     return (!isset($str) || trim($str)==='');
 }
 
+/* Check if a user is loged in */
+if (!isset($_COOKIE['user'])) {
+
+    /* Else set a cookie for the derferance to that page after login */
+    $cookie_name = "deref";
+    $cookie_val  = basename($_SERVER['PHP_SELF']);
+    setcookie($cookie_name, $cookie_val, time() + (86400));
+
+    /* Redirect to login page */
+    header("Location: login.php");
+    die();
+}
+
+
 $citizen = $am = $year = "";
 $message_err = $am_err = "";
 
@@ -22,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     else {
         $am = $_POST["am"];
     }
-    
+
     /* Connect to the database and retrieve the personal info */
     if (empty($message_err) && empty($am_err)) {
         try {
@@ -81,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdf->AddFont('DejaVu-B','','DejaVuSansCondensed-Bold.ttf',true);
                 $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
                 $pdf->SetFont('DejaVu-B','',16);
-            
+
                 /* Title */
                 $pdf->Cell(40);
                 $pdf->Cell(40,10,'ΙΚΑ - Ατομικός Λογαριασμός Ασφάλισης');
@@ -119,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdf->Ln(5);
                 $pdf->Cell(20);
                 $pdf->MultiCell(0,5,$month[$month_from-1].' '.$year_from.' - '.$month[$month_to-1].' '.$year_to);
-            
+
                 /* Create */
                 $pdf->Output();
             }
@@ -145,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!-- Include the header -->
         <?php require_once(TEMPLATES_PATH."/header.php");?>
-        
+
         <main>
             <h1 style="margin-bottom: 25px;">Βεβαίωση Σύνταξης</h1>
 

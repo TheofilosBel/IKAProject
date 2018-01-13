@@ -56,8 +56,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $cookie_name = "user";
                     $cookie_val  = $username."*".$db_id;
                     setcookie($cookie_name, $cookie_val, time() + (86400 * 3));
-                    /* Redirect to home page */
-                    header("Location: index.php");
+
+                    /* Redirect based on a cookie */
+                    if (isset($_COOKIE['deref'])) {
+                        /* If a deref parameter is set to that page */
+                        setcookie("deref", "", time() - 3600);
+                        header("Location: ".$_COOKIE['deref']);
+                    } else {
+                        /* else to home page */
+                        header("Location: index.php");
+                    }
                     die();
                 }
                 else {

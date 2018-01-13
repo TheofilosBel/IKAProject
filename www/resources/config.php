@@ -12,8 +12,15 @@
                   'urlPahts' => array(
                                       'base_dir'   => '\Ika' ,
                                       'db_scripts' => '\Ika\resources\scripts\dbmanagment'
+                                  ),
+                  'info_table_names' => array(
+                                     'telephone' => 'Τηλέφωνο',
+                                     'surname'   => 'Επίθετο',
+                                     'email'     => 'Email',
+                                     'name'      => 'Όνομα',
+                                     'AMKA'      => 'ΑΜΚΑ',
+                                     'AFM'       => 'ΑΦΜ',
                                      )
-
                 );
 
   /* Define pahts */
@@ -22,5 +29,8 @@
 
   defined("DBMANAGMENT_PATH")
         or define("DBMANAGMENT_PATH", realpath(dirname(__FILE__) . '/scripts/dbmanagment'));
+
+defined("SCRIPTS_PATH")
+      or define("SCRIPTS_PATH", realpath(dirname(__FILE__) . '/scripts'));
 
  ?>

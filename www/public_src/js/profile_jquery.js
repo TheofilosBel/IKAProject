@@ -30,29 +30,40 @@ $(document).ready(function(){
         var $input = $this.siblings("input");
         var key = $input.attr('class');
         var value = $input.val();
-        $.ajax({
-                url: "./update_handler.php",
-                type: "POST",
-                data: { [key] : value }
-        })
-        .done(function(data, textStatus, jqXHR){
-            /* Check the response */
-            if(data != "OK") {
-                /* In case of an error alert the user */
-                alert("Κάτι πήγε στραβά, επικοινωνήστε με DIT-IKA-TEAM");
-            } else {
-                /* Else change the text of span to the new value */
-                text_of_span = $input.val();
-            }
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            /* In case of failure give an error */
-            alert("Κάτι πήγε στραβά, επικοινωνάστε με DIT-IKA-TEAM.\nRequest failed: " + textStatus );
-        })
-        .always(function() {
-            /* Alwasy hide the input and put the span elemnent back */
+
+        /* Check AMKA and AFM before ajax */
+        if (key == 'AMKA' && value.lenght != 11) {
+            alert("Το ΑΜΚΑ πρέπει να είναι 11 χαρακτήρες")
             $this.hide().siblings("span.info-disp").text(text_of_span).show();
-        });
+        } else if (key == 'AFM' && value.lenght != 9) {
+            alert("Το ΑΦΜ πρέπει να είναι 9 χαρακτήρες")
+            $this.hide().siblings("span.info-disp").text(text_of_span).show();
+        }
+        else {
+            $.ajax({
+                    url: "./update_handler.php",
+                    type: "POST",
+                    data: { [key] : value }
+            })
+            .done(function(data, textStatus, jqXHR){
+                /* Check the response */
+                if(data != "OK") {
+                    /* In case of an error alert the user */
+                    alert("Κάτι πήγε στραβά, επικοινωνήστε με DIT-IKA-TEAM");
+                } else {
+                    /* Else change the text of span to the new value */
+                    text_of_span = $input.val();
+                }
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                /* In case of failure give an error */
+                alert("Κάτι πήγε στραβά, επικοινωνάστε με DIT-IKA-TEAM.\nRequest failed: " + textStatus );
+            })
+            .always(function() {
+                /* Alwasy hide the input and put the span elemnent back */
+                $this.hide().siblings("span.info-disp").text(text_of_span).show();
+            });
+        }
     });
 
     /* Switch back to span when we click outside the input */

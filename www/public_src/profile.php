@@ -21,6 +21,9 @@ try {
     $result->data_seek(0);
     $user_info = $result->fetch_assoc();
 
+    /* remove the id from the result */
+    unset($user_info['id']);
+
     /* Close the connection */
     $db_connection->close();
 }
@@ -66,40 +69,65 @@ catch(Exception $e) {
                 <div class="tab-content" id="account">
                     account
                 </div> <!-- The account tab-->
-
                 <div class="tab-content active-tab" id="personal">
-                    <div class="info-container">
-                        <span style="margin-top:10px;"><b>Όνομα <span style="color:red;">*</span></b></span>
-                        <span class="info-disp"><?php  echo $user_info['name']?></span>
-                        <input class="name"/>
-                        <p class="save">Αποθήκευση</p>
-                        <p class="edit">Επεξεργασία</p>
-                    </div>
-                    <hr>
-                    <div class="info-container">
-                        <span style="margin-top:10px;"><b>Επίθετο <span style="color:red;">*</span></b></span>
-                        <span class="info-disp"><?php  echo $user_info['surname']?></span>
-                        <input class="surname"/>
-                        <p class="save">Αποθήκευση</p>
-                        <p class="edit">Επεξεργασία</p>
-                    </div>
-                    <hr>
-                    <div class="info-container">
-                        <span style="margin-top:10px;"><b>ΑΜΚΑ <span style="color:red;">*</span></b></span>
-                        <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
-                        <input class="AMKA"/>
-                        <p class="save">Αποθήκευση</p>
-                        <p class="edit">Επεξεργασία</p>
-                    </div>
-                    <hr>
-                    <div class="info-container">
-                        <span style="margin-top:10px;"><b>Email</b></span>
-                        <span class="info-disp"><?php  echo $user_info['email']?></span>
-                        <input class="email"/>
-                        <p class="save">Αποθήκευση</p>
-                        <p class="edit">Επεξεργασία</p>
-                    </div>
-                    <hr>
+
+                    <?php foreach ($user_info as $key => $value): ?>
+                        <div class="info-container">
+                            <span style="margin-top:10px;"><b><?= $config['info_table_names'][$key] ?>
+                                <?php if ($key != 'email'): ?>
+                                    <span style="color:red;">*</span>
+                                <?php endif; ?>
+                            </b></span>
+                            <span class="info-disp"><?php  echo $value?></span>
+                            <input class="<?= $key?>"/>
+                            <p class="save">Αποθήκευση</p>
+                            <p class="edit">Επεξεργασία</p>
+                        </div>  <!-- End the info container -->
+                        <hr>
+                    <?php endforeach; ?>
+
+<!-- OLD WAY
+<div class="info-container">
+    <span style="margin-top:10px;"><b>Όνομα <span style="color:red;">*</span></b></span>
+    <span class="info-disp"><?php  echo $user_info['name']?></span>
+    <input class="name"/>
+    <p class="save">Αποθήκευση</p>
+    <p class="edit">Επεξεργασία</p>
+</div>
+<hr>
+<div class="info-container">
+    <span style="margin-top:10px;"><b>Επίθετο <span style="color:red;">*</span></b></span>
+    <span class="info-disp"><?php  echo $user_info['surname']?></span>
+    <input class="surname"/>
+    <p class="save">Αποθήκευση</p>
+    <p class="edit">Επεξεργασία</p>
+</div>
+<hr>
+<div class="info-container">
+    <span style="margin-top:10px;"><b>ΑΜΚΑ <span style="color:red;">*</span></b></span>
+    <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
+    <input class="AMKA"/>
+    <p class="save">Αποθήκευση</p>
+    <p class="edit">Επεξεργασία</p>
+</div>
+<hr>
+<div class="info-container">
+    <span style="margin-top:10px;"><b>ΑΦΜ <span style="color:red;">*</span></b></span>
+    <span class="info-disp"><?php  echo $user_info['AFM']?></span>
+    <input class="AFM"/>
+    <p class="save">Αποθήκευση</p>
+    <p class="edit">Επεξεργασία</p>
+</div>
+<hr>
+<div class="info-container">
+    <span style="margin-top:10px;"><b>Email</b></span>
+    <span class="info-disp"><?php  echo $user_info['email']?></span>
+    <input class="email"/>
+    <p class="save">Αποθήκευση</p>
+    <p class="edit">Επεξεργασία</p>
+</div>
+<hr>
+-->
                 </div> <!-- The personal tab -->
 
                 <div class="tab-content" id="history">

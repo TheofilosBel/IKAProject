@@ -6,22 +6,11 @@ function IsEmptyString($str) {
     return (!isset($str) || trim($str)==='');
 }
 
-/* Check if a user is loged in */
-if (!isset($_COOKIE['user'])) {
-
-    /* Else set a cookie for the derferance to that page after login */
-    $cookie_name = "deref";
-    $cookie_val  = basename($_SERVER['PHP_SELF']);
-    setcookie($cookie_name, $cookie_val, time() + (86400));
-
-    /* Redirect to login page */
-    header("Location: login.php");
-    die();
-}
-
+/* Check if a user is loged in and deref him to log in page if not */
+require_once(SCRIPTS_PATH."/login_check_deref.php");
 
 $citizen = $am = $year = "";
-$message_err = $am_err = "";
+$message_err = $am_err = $citizen_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /* Get starting year */

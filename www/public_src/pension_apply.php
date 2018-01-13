@@ -9,7 +9,7 @@ function IsEmptyString($str) {
 /* Check if a user is loged in and redirect him to log in page if not */
 require_once(SCRIPTS_PATH."/login_check_deref.php");
 
-$citizen = $pension_type = "";
+$citizen = $pension_type = $message_err = $message_success = "";
 $name = $surname = $telephone = $AMKA = $AFM = "";
 
 if (isset($_POST['citizen'])) {
@@ -70,10 +70,15 @@ try {
         $message_err = "Συμπληρώστε όλα τα στοιχεία με αστερίσκο στο προφίλ σας για να συνεχίσετε.";
     }
 }
+catch(Exception $e) {
+    echo "We cant handle your request because of the following error: ".$e->getMessage();
+}
 
-    catch(Exception $e) {
-        echo "We cant handle your request because of the following error: ".$e->getMessage();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($message_err)) {
+        $message_success = "Η υποβολή έγινε επιτυχώς. Η αίτηση σας έχει τεθεί σε κατάσταση αναμονής.";
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,9 +99,10 @@ try {
             <h1 style="margin-bottom: 25px; text-align:center;">Υποβολή Αίτησης Συνταξιοδότησης</h1>
 
             <div class="info-space">
+                <span class="success-block" id="success-block"><?php echo $message_success; ?></span>
                 <p>Εισάγετε τα στοιχεία σας στα παρακάτω πεδία.</p>
 
-                <form method="post" action="" name="form">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" name="form">
                     <div class="tool-info-container">
                         <span>Συνταξιοδοτικός Φορέας:</span>
                         <div class="select-style">
@@ -132,7 +138,7 @@ try {
                         <br><span class="help-block"><?php echo $message_err; ?></span><br>
 
                         <div class="align-container">
-                            <input type="submit" value="Υποβολή" class="apply" href="#"></input>
+                            <input type="submit" value="Υποβολή" class="apply"></input>
                         </div>  <!-- End of the Align Div -->
                     </div>
                 </form>

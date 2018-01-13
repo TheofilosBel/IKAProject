@@ -4,7 +4,7 @@ div.info-space {
     border: 1px solid #ccc;
     box-sizing: border-box;
     width: 800px;
-    padding: 0px 15px 15px 15px;
+    padding: 10px 15px 15px 15px;
 }
 
 div.tool-info-container {
@@ -104,6 +104,12 @@ input[type=text]::placeholder {
 }
 
 span.help-block {
-  font-size: 12px;
-  color: red;
+    font-size: 12px;
+    color: red;
+}
+
+span.success-block {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
 }

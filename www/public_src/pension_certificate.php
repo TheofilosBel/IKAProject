@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php require_once(TEMPLATES_PATH."/header.php");?>
 
         <main>
-            <h1 style="margin-bottom: 25px;">Βεβαίωση Σύνταξης</h1>
+            <h1 style="margin-bottom: 25px; text-align:center;">Βεβαίωση Σύνταξης</h1>
 
             <div class="info-space">
                 <p>Εισάγετε τα στοιχεία σας στα παρακάτω πεδία.</p>

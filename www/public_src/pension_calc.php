@@ -21,7 +21,7 @@ require_once(__ROOT__."/resources/config.php");
         <?php require_once(TEMPLATES_PATH."/header.php");?>
 
         <main>
-            <h1 style="margin-bottom: 25px;">Υπολογισμός Βασικού Ποσού Σύνταξης</h1>
+            <h1 style="margin-bottom: 25px; text-align:center;">Υπολογισμός Βασικού Ποσού Σύνταξης</h1>
 
             <div class="info-space">
                 <div class="tab-selector">
@@ -32,15 +32,15 @@ require_once(__ROOT__."/resources/config.php");
 
                 <div class="tab-content active-tab" id="tool">
                     <div class="tool-info-container">
-                        <span>Συνταξιοδοτικός Φορέας</span>
+                        <span>Συνταξιοδοτικός Φορέας:</span>
                         <div class="select-style">
                             <select name="pension-carrier">
                                 <option value="IKA">ΙΚΑ</option>
-                                <option value="PIKA">ΙΚΑ-ΕΤΑΜ</option>
+                                <option value="IKA-ETAM">ΙΚΑ-ΕΤΑΜ</option>
                             </select> <!-- End of Secelct -->
                         </div>
 
-                        <span>Τύπος Σύνταξης</span>
+                        <span>Τύπος Σύνταξης:</span>
                         <div class="select-style">
                             <select name="pension-type">
                                 <option value="Simple">Απλή</option>
@@ -48,7 +48,7 @@ require_once(__ROOT__."/resources/config.php");
                             </select> <!-- End of Secelct -->
                         </div>
 
-                        <span>Σύνολο Ημερών Εργασίας</span>
+                        <span>Σύνολο Ημερών Εργασίας:</span>
                         <input type="text" name="num-of-days" class="num-of-days" value="0"/>
                     </div>  <!--End of The General Info Div -->
                     <hr>
@@ -72,7 +72,7 @@ require_once(__ROOT__."/resources/config.php");
 
                             <div class="align-container">
                                 <button type="button" id="calculate" class="calculate" onclick="compute()">Υπολογισμός</button>
-                                <button type="button" id="clean" class="clean">Καθαρισμός</button>
+                                <button type="button" id="clean" class="clean" onclick="clean_form()">Καθαρισμός</button>
                             </div>  <!-- End of the Align Div -->
                         </form>
                     </div>  <!--End of The General Info Div -->
@@ -176,6 +176,10 @@ require_once(__ROOT__."/resources/config.php");
                                 modal.style.display = "none";
                             }
                         }
+                    }
+
+                    function clean_form() {
+                        document.getElementById("myform").reset();
                     }
                 </script>
 

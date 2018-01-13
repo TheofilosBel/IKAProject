@@ -38,6 +38,9 @@ $(document).ready(function(){
         } else if (key == 'AFM' && ((value.length != 9) || !(/^\d+$/.test(value)))) {
             alert("Το ΑΦΜ πρέπει να είναι 9 ψηφία")
             $this.hide().siblings("span.info-disp").text(text_of_span).show();
+        } else if (key == 'telephone' && ((value.length != 10) || !(/^\d+$/.test(value)))) {
+            alert("Το τηλέφωνο πρέπει να είναι 10 ψηφία")
+            $this.hide().siblings("span.info-disp").text(text_of_span).show();
         }
         else {
             $.ajax({

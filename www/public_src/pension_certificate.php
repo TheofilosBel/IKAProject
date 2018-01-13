@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $citizen = $_POST['citizen'];
     }
 
-    /* Check if all input fields are filled */
+    /* Check if AM is given */
     if (empty($_POST["am"])) {
         $am_err = "Εισάγετε το Α.Μ. σας.";
     }
@@ -78,14 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $surname = $result_row['surname'];
             $telephone = $result_row['telephone'];
             $AMKA = $result_row['AMKA'];
-
+/*
             if (IsEmptyString($name) ||
                     IsEmptyString($surname) ||
                     IsEmptyString($telephone) ||
                     IsEmptyString($AMKA)) {
                 $message_err = "Συμπληρώστε όλα τα στοιχεία με αστερίσκο στο προφίλ σας για να συνεχίσετε.";
             }
-
+*/
             if (empty($message_err)) {
                 /* Create a new pdf with the user's info */
                 require('tfpdf/tfpdf.php');
@@ -97,8 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $pdf->SetFont('DejaVu-B','',16);
 
                 /* Title */
-                $pdf->Cell(40);
-                $pdf->Cell(40,10,'ΙΚΑ - Ατομικός Λογαριασμός Ασφάλισης');
+                $pdf->Cell(30);
+                $pdf->Cell(40,10,'ΙΚΑ - Βεβαίωση Σύνταξης Για Φορολογική Χρήση');
                 $pdf->Ln(20);
 
                 /* Info */
@@ -129,10 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 /* Text */
                 $pdf->Cell(20);
                 $pdf->SetFont('DejaVu','',12);
-                $pdf->MultiCell(0,5, 'Χορηγείται για κάθε νόμιμη χρήση ο ατομικός λογαριασμός ασφάλισης για την περίοδο:');
-                $pdf->Ln(5);
-                $pdf->Cell(20);
-                $pdf->MultiCell(0,5,$month[$month_from-1].' '.$year_from.' - '.$month[$month_to-1].' '.$year_to);
+                $pdf->MultiCell(0,5, 'Χορηγείται για κάθε νόμιμη χρήση η παρούσα βεβαίωση σύνταξης.');
 
                 /* Create */
                 $pdf->Output();
@@ -175,9 +172,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <option value="2">Εξωτερικού</option>
                             </select> <!-- End of Secelct -->
                         </div>
+                        <br><span class="help-block"><?php echo $citizen_err; ?></span>
 
                         <span>Α.Μ.:</span>
                         <input type="text" id="am" name="am" placeholder="γράμματα και ψηφία" class="<?php echo (!empty($am_err)) ? 'has-error' : ''; ?>">
+                        <br><span class="help-block"><?php echo $am_err; ?></span>
 
                         <span>Έτος:</span>
                         <div class="select-style">

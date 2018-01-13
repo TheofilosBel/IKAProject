@@ -94,8 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (!$result) die($db_connection->error);
 
                 /* User inserted to database, create a cookie */
-                $cookie_name = "username";
-                $cookie_val  = $username;
+                $cookie_name = "user";
+                $cookie_val  = $username."*".$db_id;
                 setcookie($cookie_name, $cookie_val, time() + (86400 * 3));
                 
                 /* Redirect to home page */

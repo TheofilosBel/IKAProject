@@ -69,7 +69,7 @@ catch(Exception $e) {
 
                 <div class="tab-content active-tab" id="personal">
                     <div class="info-container">
-                        <span style="margin-top:10px;"><b>Όνομα</b></span>
+                        <span style="margin-top:10px;"><b>Όνομα <span style="color:red;">*</span></b></span>
                         <span class="info-disp"><?php  echo $user_info['name']?></span>
                         <input class="name"/>
                         <p class="save">Αποθήκευση</p>
@@ -77,7 +77,7 @@ catch(Exception $e) {
                     </div>
                     <hr>
                     <div class="info-container">
-                        <span style="margin-top:10px;"><b>Επίθετο</b></span>
+                        <span style="margin-top:10px;"><b>Επίθετο <span style="color:red;">*</span></b></span>
                         <span class="info-disp"><?php  echo $user_info['surname']?></span>
                         <input class="surname"/>
                         <p class="save">Αποθήκευση</p>
@@ -85,7 +85,7 @@ catch(Exception $e) {
                     </div>
                     <hr>
                     <div class="info-container">
-                        <span style="margin-top:10px;"><b>ΑΜΚΑ</b></span>
+                        <span style="margin-top:10px;"><b>ΑΜΚΑ <span style="color:red;">*</span></b></span>
                         <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
                         <input class="AMKA"/>
                         <p class="save">Αποθήκευση</p>

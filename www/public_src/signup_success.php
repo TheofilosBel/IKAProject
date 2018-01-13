@@ -21,7 +21,7 @@ require_once(__ROOT__."/resources/config.php");
             <h1>Η εγγραφή σας ολοκληρώθηκε με επιτυχία!</h1>
             <p style="text-align:center;">
             Για να προσθέσετε περισσότερες προσωπικές πληροφορίες στο λογαριασμό σας επισκεφθείτε το Προφίλ σας.<br>
-            <a href="#" class="button">Το Προφίλ μου</a>
+            <a href="profile.php" class="button">Το Προφίλ μου</a>
             </p>
         </main>  <!-- main -->
 

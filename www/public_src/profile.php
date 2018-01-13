@@ -77,6 +77,12 @@ catch(Exception $e) {
                                 <?php if ($key != 'email'): ?>
                                     <span style="color:red;">*</span>
                                 <?php endif; ?>
+                                <?php if ($key == 'AMKA'): ?>
+                                    <span class="password-info">11 ψηφία</span>
+                                <?php endif; ?>
+                                <?php if ($key == 'AFM'): ?>
+                                    <span class="password-info">9 ψηφία</span>
+                                <?php endif; ?>
                             </b></span>
                             <span class="info-disp"><?php  echo $value?></span>
                             <input class="<?= $key?>"/>

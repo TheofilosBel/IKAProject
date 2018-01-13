@@ -32,11 +32,11 @@ $(document).ready(function(){
         var value = $input.val();
 
         /* Check AMKA and AFM before ajax */
-        if (key == 'AMKA' && value.lenght != 11) {
-            alert("Το ΑΜΚΑ πρέπει να είναι 11 χαρακτήρες")
+        if ((key == 'AMKA') && ((value.length != 11) || !(/^\d+$/.test(value)))) {
+            alert("Το ΑΜΚΑ πρέπει να είναι 11 ψηφία")
             $this.hide().siblings("span.info-disp").text(text_of_span).show();
-        } else if (key == 'AFM' && value.lenght != 9) {
-            alert("Το ΑΦΜ πρέπει να είναι 9 χαρακτήρες")
+        } else if (key == 'AFM' && ((value.length != 9) || !(/^\d+$/.test(value)))) {
+            alert("Το ΑΦΜ πρέπει να είναι 9 ψηφία")
             $this.hide().siblings("span.info-disp").text(text_of_span).show();
         }
         else {

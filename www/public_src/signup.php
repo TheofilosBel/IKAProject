@@ -88,8 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $result_row = $result->fetch_assoc();
                 $db_id = $result_row['id'];
 
-                $query = 'INSERT INTO user_info(id, name, surname, email, telephone, AMKA)
-                    VALUES (\''.$db_id.'\', NULL, NULL, \''.$email.'\', NULL, NULL);';
+                $query = 'INSERT INTO user_info(id, name, surname, email, telephone, AMKA, AFM)
+                    VALUES (\''.$db_id.'\', NULL, NULL, \''.$email.'\', NULL, NULL, NULL);';
                 $result = $db_connection->query($query);
                 if (!$result) die($db_connection->error);
 

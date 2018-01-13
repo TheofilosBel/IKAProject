@@ -6,7 +6,7 @@ function IsEmptyString($str) {
     return (!isset($str) || trim($str)==='');
 }
 
-/* Check if a user is loged in and deref him to log in page if not */
+/* Check if a user is loged in and redirect him to log in page if not */
 require_once(SCRIPTS_PATH."/login_check_deref.php");
 
 $citizen = $am = $year = "";

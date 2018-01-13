@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="info-space">
                 <span class="success-block" id="success-block"><?php echo $message_success; ?></span>
-                <p>Εισάγετε τα στοιχεία σας στα παρακάτω πεδία.</p>
+                <p>Εισάγετε τα στοιχεία σας στα 2 πρώτα πεδία και επιβεβαιώστε την εγκυρότητα των υπολοίπων.</p>
 
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" name="form">
                     <div class="tool-info-container">

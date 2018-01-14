@@ -53,7 +53,7 @@ catch(Exception $e) {
         <div class="container">
             <div class="photo-space">
                 <div class="circle">
-                    <img src="" alt="">
+                    <img src="" alt="Φοτογραφία Προφίλ">
                 </div> <!-- Circle for the photo -->
                 <span style="font-size:25px; padding:20px;"><?php echo $user_name?></span>
             </div> <!-- Photo space -->

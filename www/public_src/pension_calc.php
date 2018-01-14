@@ -85,37 +85,61 @@ require_once(__ROOT__."/resources/config.php");
 
                 <script type="text/javascript">
                     function compute() {
-                        var str_input;
-                        var flag;
+                        var flag_row; /* To ensure that both values in a row are given */
+                        var flag_none = 1; /* To ensure that at least on value is given in the form */
 
                         /* Get the data from the form */
                         var total_apodoxes = 0;
                         var total_hmeres = 0;
 
                         for (i = 0; i < 10; i++) {
-                            flag = 0;
+                            flag_row = 0;
 
                             if (document.getElementsByClassName("apodoxes")[i].value) {
+                                if (isNaN(document.getElementsByClassName("apodoxes")[i].value)) {
+                                    document.getElementsByClassName("help-block")[0].innerHTML = "Πρέπει να συμπληρώσετε\
+                                    τα πεδία με αριθμούς.";
+                                    return;
+                                }
+
                                 total_apodoxes += parseInt(document.getElementsByClassName("apodoxes")[i].value);
-                                flag = 1;
+                                flag_row = 1;
+                                flag_none = 0;
                             }
 
                             if (document.getElementsByClassName("hmeres")[i].value) {
+                                if (isNaN(document.getElementsByClassName("hmeres")[i].value)) {
+                                    document.getElementsByClassName("help-block")[0].innerHTML = "Πρέπει να συμπληρώσετε\
+                                    τα πεδία με αριθμούς.";
+                                    return;
+                                }
+
                                 total_hmeres += parseInt(document.getElementsByClassName("hmeres")[i].value);
-                                if (flag == 0) {
+                                if (flag_row == 0) {
                                     document.getElementsByClassName("help-block")[0].innerHTML = "Πρέπει να συμπληρώσετε\
                                     και τα δύο πεδία σε κάθε γραμμή.";
                                     return;
                                 }
+                                flag_none = 0;
                             }
                             else {
-                                if (flag == 1) {
+                                if (flag_row == 1) {
                                     document.getElementsByClassName("help-block")[0].innerHTML = "Πρέπει να συμπληρώσετε\
                                     και τα δύο πεδία σε κάθε γραμμή.";
                                     return;
                                 }
                             }
                         }
+
+                        /* Check if at least onw value was given */
+                        if (flag_none == 1) {
+                            document.getElementsByClassName("help-block")[0].innerHTML = "Πρέπει να συμπληρώσετε\
+                            τουλάχιστον μια γραμμή.";
+                            return;
+                        }
+
+                        /* Remove any previous errors */
+                        document.getElementsByClassName("help-block")[0].innerHTML = "";
 
                         /* Compute the pension amount */
                         var total_amount = total_apodoxes * total_hmeres;

@@ -100,6 +100,15 @@
                     </p>
                 </div>
 
+                <button class="accordion">Υπολογισμός Ετών για Συνταξιοδότηση</button>
+                <div class="panel">
+                    <p>Με τα εισαγόμενα στοιχεία σας, το εργαλείο υπολογίζει κατά προσέγγιση
+                    τα έτη που απομένουν για να δικαιούστε συνταξιοδότηση.<br><br>
+
+                    Μεταβείτε στην υπηρεσία <a href="insured_calc.php"><b>Υπολογισμός Ετών για Συνταξιοδότηση</b></a>.
+                    </p>
+                </div>
+
                 <script>
                     var acc = document.getElementsByClassName("accordion");
                     var i;

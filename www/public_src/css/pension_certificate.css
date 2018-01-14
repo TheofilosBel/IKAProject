@@ -113,3 +113,10 @@ span.success-block {
     font-weight: bold;
     color: green;
 }
+
+span.password-info {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    color: gray;
+}

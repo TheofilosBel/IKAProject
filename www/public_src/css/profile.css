@@ -55,8 +55,8 @@ input {
 }
 
 span.password-info {
-  font-size: 12px;
-  font-weight: normal;
-  font-style: italic;
-  color: gray;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    color: gray;
 }

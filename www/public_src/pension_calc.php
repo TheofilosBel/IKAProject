@@ -193,11 +193,9 @@ require_once(__ROOT__."/resources/config.php");
                 </script>
 
                 <div class="tab-content" id="help">
-                    HELP
                 </div> <!-- The Help tab-->
 
                 <div class="tab-content" id="info">
-                    Info
                 </div> <!-- The Info tab-->
         </main>  <!-- End of main -->
 

@@ -190,7 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <br><span class="help-block"><?php echo $message_err; ?></span><br>
 
                         <div class="align-container">
-                            <input type="submit" value="Έκδοση" class="print" href="#"></input>
+                            <input type="submit" value="Έκδοση" class="print"></input>
                         </div>  <!-- End of the Align Div -->
                     </div>
                 </form>

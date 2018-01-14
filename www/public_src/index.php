@@ -22,14 +22,14 @@ require_once(__ROOT__."/resources/config.php");
                 <div class="main-opts">
                     <a href='insured.php' class="box asfal"><img src="img/asf.png" height="70" width="70"><h3>Ασφαλισμένοι</h3></a>
                     <a href="pensioners.php" class="box synta"><img src="img/synt.png" height="70" width="70"><h3>Συνταξιούχοι</h3></a>
-                    <a href="#" class="box ergo"><img src="img/erg.png" height="70" width="70"><h3>Εργοδότες</h3></a>
-                    <a href="#" class="box foreis"><img src="img/foreis.png" height="70" width="70"><h3>Φορείς</h3></a>
+                    <a href="under_construction.php" class="box ergo"><img src="img/erg.png" height="70" width="70"><h3>Εργοδότες</h3></a>
+                    <a href="under_construction.php" class="box foreis"><img src="img/foreis.png" height="70" width="70"><h3>Φορείς</h3></a>
                 </div>  <!--div child 1-->
 
                 <div class="secondary-opts">
-                    <a href="#" class="box faqs"><img src="img/faqs.png" height="70" width="70"><h3>Συχνές Ερωτήσεις - FAQs</h3></a>
-                    <a href="#" class="box forum"><img src="img/forum.png" height="70" width="70"><h3>Φόρουμ</h3></a>
-                    <a href="#" class="box epik"><img src="img/contact.png" height="70" width="70"><h3>Επικοινωνία</h3></a>
+                    <a href="under_construction.php" class="box faqs"><img src="img/faqs.png" height="70" width="70"><h3>Συχνές Ερωτήσεις - FAQs</h3></a>
+                    <a href="under_construction.php" class="box forum"><img src="img/forum.png" height="70" width="70"><h3>Φόρουμ</h3></a>
+                    <a href="under_construction.php" class="box epik"><img src="img/contact.png" height="70" width="70"><h3>Επικοινωνία</h3></a>
                 </div>  <!--div child 2-->
 
             </div>  <!-- div -->

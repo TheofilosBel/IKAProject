@@ -67,7 +67,6 @@ catch(Exception $e) {
                 </div> <!--  The tab selector bar -->
 
                 <div class="tab-content" id="account">
-                    account
                 </div> <!-- The account tab-->
                 <div class="tab-content active-tab" id="personal">
 
@@ -91,57 +90,12 @@ catch(Exception $e) {
                         </div>  <!-- End the info container -->
                         <hr>
                     <?php endforeach; ?>
-
-<!-- OLD WAY
-<div class="info-container">
-    <span style="margin-top:10px;"><b>Όνομα <span style="color:red;">*</span></b></span>
-    <span class="info-disp"><?php  echo $user_info['name']?></span>
-    <input class="name"/>
-    <p class="save">Αποθήκευση</p>
-    <p class="edit">Επεξεργασία</p>
-</div>
-<hr>
-<div class="info-container">
-    <span style="margin-top:10px;"><b>Επίθετο <span style="color:red;">*</span></b></span>
-    <span class="info-disp"><?php  echo $user_info['surname']?></span>
-    <input class="surname"/>
-    <p class="save">Αποθήκευση</p>
-    <p class="edit">Επεξεργασία</p>
-</div>
-<hr>
-<div class="info-container">
-    <span style="margin-top:10px;"><b>ΑΜΚΑ <span style="color:red;">*</span></b></span>
-    <span class="info-disp"><?php  echo $user_info['AMKA']?></span>
-    <input class="AMKA"/>
-    <p class="save">Αποθήκευση</p>
-    <p class="edit">Επεξεργασία</p>
-</div>
-<hr>
-<div class="info-container">
-    <span style="margin-top:10px;"><b>ΑΦΜ <span style="color:red;">*</span></b></span>
-    <span class="info-disp"><?php  echo $user_info['AFM']?></span>
-    <input class="AFM"/>
-    <p class="save">Αποθήκευση</p>
-    <p class="edit">Επεξεργασία</p>
-</div>
-<hr>
-<div class="info-container">
-    <span style="margin-top:10px;"><b>Email</b></span>
-    <span class="info-disp"><?php  echo $user_info['email']?></span>
-    <input class="email"/>
-    <p class="save">Αποθήκευση</p>
-    <p class="edit">Επεξεργασία</p>
-</div>
-<hr>
--->
                 </div> <!-- The personal tab -->
 
                 <div class="tab-content" id="history">
-                    history
                 </div> <!-- The history tab -->
 
                 <div class="tab-content" id="notifications">
-                    notification
                 </div>  <!-- The Notification tab -->
             </div> <!-- User info space -->
         </div> <!-- Container -->

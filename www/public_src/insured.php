@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
         <link rel="stylesheet" type="text/css" href="css/accordion.css">
+        <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
         <meta charset="utf8">
         <title>ΙΚΑ - Υπηρεσίες προς Ασφαλισμένους</title>
     </head>
@@ -16,6 +17,11 @@
         ?>
 
         <main>
+            <ul class="breadcrumb">
+                <li><a href="index.php">Αρχική Σελίδα</a></li>
+                <li>Υπηρεσίες προς Ασφαλισμένους</li>
+            </ul>
+
             <h1>Υπηρεσίες προς Ασφαλισμένους</h1>
             <div class="container">
                 <button class="accordion">Πιστοποίηση Ασφαλισμένου</button>
@@ -73,12 +79,12 @@
                     </p>
                 </div>
 
-                <button class="accordion">Ασφάλιση Τέκνου</button>
+                <button class="accordion">Υποβολή Αίτησης Ασφάλισης Τέκνου</button>
                 <div class="panel">
                     <p>Μέσω της υπηρεσίας αυτής έχετε τη δυνατότητα να προσθέσετε τέκνα στα 
                     προστατευόμενα μέλη της οικογένειας σας.<br><br>
 
-                    Μεταβείτε στην υπηρεσία <a href="insured_child.php"><b>Ασφάλιση Τέκνου</b></a>.
+                    Μεταβείτε στην υπηρεσία <a href="insured_child.php"><b>Υποβολή Αίτησης Ασφάλισης Τέκνου</b></a>.
                     </p>
                 </div>
 

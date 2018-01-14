@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
         <link rel="stylesheet" type="text/css" href="css/accordion.css">
+        <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
         <meta charset="utf8">
         <title>ΙΚΑ - Υπηρεσίες προς Συνταξιούχους</title>
     </head>
@@ -17,6 +18,11 @@
         ?>
 
         <main>
+            <ul class="breadcrumb">
+                <li><a href="index.php">Αρχική Σελίδα</a></li>
+                <li>Υπηρεσίες προς Συνταξιούχους</li>
+            </ul>
+            
             <h1>Υπηρεσίες προς Συνταξιούχους</h1>
             <div class="container">
                 <button class="accordion">Ηλεκτρονική Υποβολή Αίτησης Συνταξιοδότησης</button>

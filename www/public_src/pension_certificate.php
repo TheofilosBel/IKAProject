@@ -145,6 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <head>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
         <link rel="stylesheet" type="text/css" href="css/pension_certificate.css">
+        <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
         <meta charset="utf8">
         <title>ΙΚΑ - Βεβαίωση Σύνταξης</title>
     </head>
@@ -155,6 +156,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php require_once(TEMPLATES_PATH."/header.php");?>
 
         <main>
+            <ul class="breadcrumb">
+                <li><a href="index.php">Αρχική Σελίδα</a></li>
+                <li><a href="insured.php">Υπηρεσίες προς Συνταξιούχους</a></li>
+                <li>Βεβαίωση Σύνταξης</li>
+            </ul>
+            
             <h1 style="margin-bottom: 25px; text-align:center;">Βεβαίωση Σύνταξης</h1>
 
             <div class="info-space">

@@ -86,6 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <head>
         <link rel="stylesheet" type="text/css" href="css/general_layout.css">
         <link rel="stylesheet" type="text/css" href="css/pension_certificate.css">
+        <link rel="stylesheet" type="text/css" href="css/breadcrumb.css">
         <meta charset="utf8">
         <title>ΙΚΑ - Υποβολή Αίτησης Συνταξιοδότησης</title>
     </head>
@@ -96,6 +97,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php require_once(TEMPLATES_PATH."/header.php");?>
 
         <main>
+            <ul class="breadcrumb">
+                <li><a href="index.php">Αρχική Σελίδα</a></li>
+                <li><a href="insured.php">Υπηρεσίες προς Συνταξιούχους</a></li>
+                <li>Υποβολή Αίτησης Συνταξιοδότησης</li>
+            </ul>
+            
             <h1 style="margin-bottom: 25px; text-align:center;">Υποβολή Αίτησης Συνταξιοδότησης</h1>
 
             <div class="info-space">
